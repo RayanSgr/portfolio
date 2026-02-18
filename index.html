@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Seghour Rayan | BTS SIO SISR</title>
+    <meta name="description" content="Portfolio de Seghour Rayan, étudiant en BTS SIO option SISR. Découvrez mes projets, ma veille technologique IoT et mes compétences en réseau et développement.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles-pro.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Skip to content for accessibility -->
+    <a href="#main-content" class="skip-to-content">Aller au contenu principal</a>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <!-- Barre de progression de scroll -->
+        <div class="scroll-progress" id="scroll-progress"></div>
+        
+        <div class="nav-container">
+            <div class="logo">SR</div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link active">Accueil</a>
+                <a href="#about" class="nav-link">À propos</a>
+                <a href="#competences" class="nav-link">Compétences</a>
+                <a href="#certifications" class="nav-link">Certifications</a>
+                <a href="#projects" class="nav-link">Projets</a>
+                <a href="veille-iot.html" class="nav-link nav-link-special">
+                    <i class="fas fa-satellite-dish"></i> Veille IoT
+                </a>
+                <a href="#stages" class="nav-link">Formation</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-particles" id="particles"></div>
+        <div class="hero-content">
+            <div class="hero-badge animate-fade-in">
+                <i class="fas fa-graduation-cap"></i>
+                BTS SIO SISR - 2ème année | Recherche Alternance Licence 2026
+            </div>
+            <h1 class="hero-title animate-slide-up">
+                Bonjour, je suis <span class="gradient-text">Rayan Seghour</span>
+            </h1>
+            <p class="hero-subtitle animate-slide-up-delay">
+                <span class="typewriter" id="typewriter"></span>
+                <span class="cursor">|</span>
+            </p>
+            <div class="hero-buttons animate-fade-in-delay">
+                <a href="CV_Rayan_Seghour.pdf" target="_blank" class="download-cv-btn">
+                    <i class="fas fa-file-pdf"></i>
+                    Voir mon CV
+                </a>
+                <button class="btn btn-primary" onclick="scrollToSection('projects')">
+                    <i class="fas fa-folder-open"></i>
+                    Mes projets
+                </button>
+                <a href="veille-iot.html" class="btn btn-secondary">
+                    <i class="fas fa-satellite-dish"></i>
+                    Veille IoT
+                </a>
+            </div>
+            
+            <!-- Badge de disponibilité -->
+            <div class="availability-badge">
+                <i class="fas fa-calendar-check"></i> Disponible en alternance dès septembre 2026
+            </div>
+            
+            <!-- Liens sociaux -->
+            <div class="social-links">
+                <a href="mailto:rayanseghour@gmail.com" class="social-btn email" aria-label="Email" data-tooltip="rayanseghour@gmail.com">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/rayan-seghour-4588aa348" target="_blank" rel="noopener" class="social-btn linkedin" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/rayansgr" target="_blank" rel="noopener" class="social-btn github" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+            
+            <!-- Stats animés avec compteurs -->
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 class="counter" data-target="4">0</h3>
+                        <p>Projets</p>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 class="counter" data-target="2">0</h3>
+                        <p>Stages</p>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 class="counter" data-target="4">0</h3>
+                        <p>Certifications</p>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-newspaper"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 class="counter" data-target="12">0</h3>
+                        <p>Articles IoT</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-scroll">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- À propos Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">À propos de moi</h2>
+                <div class="section-divider"></div>
+            </div>
+            
+            <div class="about-grid">
+                <div class="about-text">
+                    <div class="about-card">
+                        <div class="card-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h3>Mon parcours</h3>
+                        <p>
+                            Actuellement en <strong>deuxième année de BTS SIO option SISR</strong>, je me passionne pour 
+                            les infrastructures réseau, la sécurité informatique et l'administration système. Mon récent stage 
+                            de technicien support IT chez <strong>Humans Matter</strong> m'a permis d'approfondir mes compétences 
+                            en gestion de parc (MDM), cybersécurité (Bitdefender) et support utilisateur dans un environnement 
+                            professionnel multi-sites.
+                        </p>
+                        <p>
+                            Mon stage de première année en développement web chez <strong>Giftasso (Metacard)</strong> a consolidé 
+                            ma vision : c'est bien l'infrastructure, le réseau et l'administration système qui me passionnent. 
+                            Ma curiosité naturelle m'amène à explorer constamment les dernières innovations, notamment dans 
+                            l'<strong>IoT</strong> et la <strong>cybersécurité</strong>. Je maintiens une veille technologique 
+                            active sur l'Internet des Objets depuis mars 2025.
+                        </p>
+                    </div>
+
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-certificate"></i>
+                            <div>
+                                <h4>Formation</h4>
+                                <p>BTS SIO SISR</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-briefcase"></i>
+                            <div>
+                                <h4>Stages</h4>
+                                <p>2 stages professionnels</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-lightbulb"></i>
+                            <div>
+                                <h4>Veille Tech</h4>
+                                <p>IoT & Cybersécurité</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-visual">
+                    <div class="stats-container">
+                        <div class="stat-box">
+                            <i class="fas fa-code"></i>
+                            <h3 class="stat-number">4</h3>
+                            <p>Projets réalisés</p>
+                        </div>
+                        <div class="stat-box">
+                            <i class="fas fa-clock"></i>
+                            <h3 class="stat-number">5</h3>
+                            <p>Mois de stage</p>
+                        </div>
+                        <div class="stat-box">
+                            <i class="fas fa-newspaper"></i>
+                            <h3 class="stat-number">12+</h3>
+                            <p>Articles de veille</p>
+                        </div>
+                        <div class="stat-box">
+                            <i class="fas fa-server"></i>
+                            <h3 class="stat-number">10+</h3>
+                            <p>Technologies maîtrisées</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Compétences Section -->
+    <section id="competences" class="skills-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Compétences techniques</h2>
+                <div class="section-divider"></div>
+                <p class="section-subtitle">Domaines de compétences acquis pendant ma formation et mes stages</p>
+            </div>
+
+            <div class="skills-modern-grid">
+                <!-- Infrastructure & Systèmes -->
+                <div class="skill-domain">
+                    <div class="domain-header">
+                        <div class="domain-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h3>Infrastructure & Systèmes</h3>
+                    </div>
+                    <div class="domain-skills">
+                        <div class="modern-skill-item">
+                            <div class="skill-header-modern">
+                                <span class="skill-name-modern">
+                                    <i class="fab fa-linux"></i> Administration Linux
+                                </span>
+                            </div>
+                            <p class="skill-context">Debian, Ubuntu, Kali • CLI • Services réseau</p>
+                        </div>
+                        <div class="modern-skill-item">
+                            <div class="skill-header-modern">
+                                <span class="skill-name-modern">
+                                    <i class="fas fa-windows"></i> Windows Server
+                                </span>
+                            </div>
+                            <p class="skill-context">Active Directory • DHCP • DNS</p>
+                        </div>
+                        <div class="modern-skill-item">
+                            <div class="skill-header-modern">
+                                <span class="skill-name-modern">
+                                    <i class="fas fa-cube"></i> Virtualisation
+                                </span>
+                            </div>
+                            <p class="skill-context">Proxmox • VMware ESXi • VirtualBox</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Réseaux & Sécurité -->
+                <div class="skill-domain">
+                    <div class="domain-header">
+                        <div class="domain-icon" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                        <h3>Réseaux & Sécurité</h3>
+                    </div>
+                    <div class="domain-skills">
+                        <div class="modern-skill-item">
+                            <div class="skill-header-modern">
+                                <span class="skill-name-modern">
+                                    <i class="fas fa-sitemap"></i> Cisco IOS
+                                </span>
+                            </div>
+                            <p class="skill-context">Routage • Switching • VLANs • Configuration</p>
+                        </div>
+                        <div class="modern-skill-item">
+                            <div class="skill-header-modern">
+                                <span class="skill-name-modern">
+                                    <i class="fas fa-shield-alt"></i> Sécurité réseau
+                                </span>
+                            </div>
+                            <p class="skill-context">pfSense • Pare-feu • DMZ • ACL</p>
+                        </div>
+                        <div class="modern-skill-item">
+                            <div class="skill-header-modern">
+                                <span class="skill-name-modern">
+                                    <i class="fas fa-project-diagram"></i> Architecture réseau
+                                </span>
+                            </div>
+                            <p class="skill-context">Conception • Adressage IP • Segmentation</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Support & Gestion -->
+                <div class="skill-domain">
+                    <div class="domain-header">
+                        <div class="domain-icon" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3>Support & Gestion IT</h3>
+                    </div>
+                    <div class="domain-skills">
+                        <div class="modern-skill-item">
+                            <div class="skill-header-modern">
+                                <span class="skill-name-modern">
+                                    <i class="fas fa-user-shield"></i> Support utilisateur
+                                </span>
+                            </div>
+                            <p class="skill-context">Ticketing N1/N2 • Résolution incidents • Support Mac/PC</p>
+                        </div>
+                        <div class="modern-skill-item">
+                            <div class="skill-header-modern">
+                                <span class="skill-name-modern">
+                                    <i class="fas fa-mobile-alt"></i> MDM & Gestion de parc
+                                </span>
+                            </div>
+                            <p class="skill-context">Samsung Knox • Déploiement flotte • Configuration</p>
+                        </div>
+                        <div class="modern-skill-item">
+                            <div class="skill-header-modern">
+                                <span class="skill-name-modern">
+                                    <i class="fas fa-shield-virus"></i> Cybersécurité
+                                </span>
+                            </div>
+                            <p class="skill-context">Bitdefender GravityZone • Audits • SecNumAcadémie</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Outils & Technologies -->
+                <div class="skill-domain full-width">
+                    <div class="domain-header">
+                        <div class="domain-icon" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>Outils & Technologies maîtrisés</h3>
+                    </div>
+                    <div class="tech-badges-modern">
+                        <div class="tech-item-modern">
+                            <i class="fab fa-linux"></i>
+                            <span>Linux</span>
+                        </div>
+                        <div class="tech-item-modern">
+                            <i class="fas fa-terminal"></i>
+                            <span>Cisco IOS</span>
+                        </div>
+                        <div class="tech-item-modern">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>pfSense</span>
+                        </div>
+                        <div class="tech-item-modern">
+                            <i class="fas fa-shield-virus"></i>
+                            <span>Bitdefender</span>
+                        </div>
+                        <div class="tech-item-modern">
+                            <i class="fas fa-mobile-alt"></i>
+                            <span>Samsung Knox</span>
+                        </div>
+                        <div class="tech-item-modern">
+                            <i class="fab fa-docker"></i>
+                            <span>Docker</span>
+                        </div>
+                        <div class="tech-item-modern">
+                            <i class="fas fa-server"></i>
+                            <span>Proxmox</span>
+                        </div>
+                        <div class="tech-item-modern">
+                            <i class="fas fa-network-wired"></i>
+                            <span>Packet Tracer</span>
+                        </div>
+                        <div class="tech-item-modern">
+                            <i class="fas fa-search"></i>
+                            <span>Wireshark</span>
+                        </div>
+                        <div class="tech-item-modern">
+                            <i class="fas fa-terminal"></i>
+                            <span>SSH</span>
+                        </div>
+                        <div class="tech-item-modern">
+                            <i class="fas fa-database"></i>
+                            <span>GLPI</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="certifications-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Certifications & Formations</h2>
+                <div class="section-divider"></div>
+                <p class="section-subtitle">Mes certifications professionnelles en cybersécurité et réseaux</p>
+            </div>
+
+            <div class="certifications-grid">
+                <!-- SecNumAcadémie ANSSI -->
+                <div class="certification-card featured-cert" data-animate>
+                    <div class="cert-badge">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="cert-logo">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>ANSSI</span>
+                    </div>
+                    <h3 class="cert-title">SecNumAcadémie</h3>
+                    <p class="cert-issuer">Agence Nationale de la Sécurité des Systèmes d'Information</p>
+                    <p class="cert-date"><i class="fas fa-calendar"></i> Septembre 2025</p>
+                    
+                    <div class="cert-modules">
+                        <div class="module-item">
+                            <span class="module-name">Panorama de la SSI</span>
+                            <span class="module-score">82%</span>
+                        </div>
+                        <div class="module-item">
+                            <span class="module-name">Sécurité de l'authentification</span>
+                            <span class="module-score">82%</span>
+                        </div>
+                        <div class="module-item">
+                            <span class="module-name">Sécurité sur Internet</span>
+                            <span class="module-score">84%</span>
+                        </div>
+                        <div class="module-item">
+                            <span class="module-name">Sécurité du poste de travail</span>
+                            <span class="module-score">82%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="cert-skills">
+                        <span class="cert-tag">Cybersécurité</span>
+                        <span class="cert-tag">SSI</span>
+                        <span class="cert-tag">Authentification</span>
+                        <span class="cert-tag">Protection</span>
+                    </div>
+                    
+                    <a href="Certification_SecNumAcademie_ANSSI.pdf" target="_blank" class="cert-view-btn">
+                        <i class="fas fa-file-pdf"></i> Voir la certification
+                    </a>
+                </div>
+
+                <!-- Cisco Introduction to Cybersecurity -->
+                <div class="certification-card" data-animate>
+                    <div class="cert-badge">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="cert-logo cisco-logo">
+                        <i class="fas fa-network-wired"></i>
+                        <span>Cisco</span>
+                    </div>
+                    <h3 class="cert-title">Introduction to Cybersecurity</h3>
+                    <p class="cert-issuer">Cisco Networking Academy</p>
+                    <p class="cert-date"><i class="fas fa-calendar"></i> Septembre 2025</p>
+                    
+                    <div class="cert-description">
+                        <ul>
+                            <li>Fondamentaux de la cybersécurité</li>
+                            <li>Menaces et vulnérabilités courantes</li>
+                            <li>Protection en ligne</li>
+                            <li>Sécurité organisationnelle</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="cert-skills">
+                        <span class="cert-tag">Cisco</span>
+                        <span class="cert-tag">Cybersecurity</span>
+                        <span class="cert-tag">Threats</span>
+                    </div>
+                    
+                    <a href="Certification_Cisco_Cybersecurity.pdf" target="_blank" class="cert-view-btn">
+                        <i class="fas fa-file-pdf"></i> Voir la certification
+                    </a>
+                </div>
+
+                <!-- Cisco Linux Unhatched -->
+                <div class="certification-card" data-animate>
+                    <div class="cert-badge">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="cert-logo cisco-logo">
+                        <i class="fab fa-linux"></i>
+                        <span>Cisco + NDG</span>
+                    </div>
+                    <h3 class="cert-title">Linux Unhatched</h3>
+                    <p class="cert-issuer">Cisco Networking Academy x NDG</p>
+                    <p class="cert-date"><i class="fas fa-calendar"></i> Septembre 2025</p>
+                    
+                    <div class="cert-description">
+                        <ul>
+                            <li>Ligne de commande Linux</li>
+                            <li>Navigation et gestion de fichiers</li>
+                            <li>Scripts et permissions</li>
+                            <li>Configuration réseau Linux</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="cert-skills">
+                        <span class="cert-tag">Linux</span>
+                        <span class="cert-tag">CLI</span>
+                        <span class="cert-tag">Scripting</span>
+                    </div>
+                    
+                    <a href="Certification_Cisco_Linux.pdf" target="_blank" class="cert-view-btn">
+                        <i class="fas fa-file-pdf"></i> Voir la certification
+                    </a>
+                </div>
+
+                <!-- CCNA 1 (En cours) -->
+                <div class="certification-card in-progress" data-animate>
+                    <div class="cert-badge ongoing">
+                        <i class="fas fa-spinner fa-pulse"></i>
+                    </div>
+                    <div class="cert-logo cisco-logo">
+                        <i class="fas fa-network-wired"></i>
+                        <span>Cisco</span>
+                    </div>
+                    <h3 class="cert-title">CCNA 1 - Introduction to Networks</h3>
+                    <p class="cert-issuer">Cisco Networking Academy</p>
+                    <p class="cert-date"><i class="fas fa-hourglass-half"></i> En cours - 2026</p>
+                    
+                    <div class="cert-description">
+                        <ul>
+                            <li>Fondamentaux des réseaux</li>
+                            <li>Modèle OSI et TCP/IP</li>
+                            <li>Adressage IPv4 et IPv6</li>
+                            <li>Configuration Cisco IOS</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="cert-skills">
+                        <span class="cert-tag">CCNA</span>
+                        <span class="cert-tag">Routing</span>
+                        <span class="cert-tag">Switching</span>
+                    </div>
+                    
+                    <div class="cert-progress-bar">
+                        <div class="progress-fill" style="width: 60%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projets Section -->
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Mes Projets</h2>
+                <div class="section-divider"></div>
+                <p class="section-subtitle">Découvrez mes réalisations techniques et ma veille technologique</p>
+            </div>
+
+            <!-- Filtres de projets -->
+            <div class="project-filters">
+                <button class="filter-btn active" data-category="all">
+                    <i class="fas fa-th"></i> Tous
+                </button>
+                <button class="filter-btn" data-category="veille">
+                    <i class="fas fa-newspaper"></i> Veille
+                </button>
+                <button class="filter-btn" data-category="reseau">
+                    <i class="fas fa-network-wired"></i> Réseau
+                </button>
+                <button class="filter-btn" data-category="dev">
+                    <i class="fas fa-code"></i> Développement
+                </button>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Veille IoT - Projet mis en avant -->
+                <div class="project-card featured-project" data-category="veille" data-animate>
+                    <div class="project-badge">
+                        <i class="fas fa-star"></i> Projet phare
+                    </div>
+                    <div class="project-icon gradient-bg">
+                        <i class="fas fa-satellite-dish"></i>
+                    </div>
+                    <h3 class="project-title">Veille Technologique IoT</h3>
+                    <p class="project-description">
+                        Analyse approfondie des innovations IoT sur 11 mois (Mars 2025 - Février 2026). 
+                        Suivi de 12+ actualités majeures, analyse des tendances et enjeux de sécurité.
+                    </p>
+                    <div class="project-stats">
+                        <span><i class="fas fa-calendar"></i> 11 mois</span>
+                        <span><i class="fas fa-newspaper"></i> 12+ articles</span>
+                        <span><i class="fas fa-chart-line"></i> 6 tendances</span>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag">IoT</span>
+                        <span class="tag">Matter 1.3</span>
+                        <span class="tag">Sécurité</span>
+                        <span class="tag">IA Edge</span>
+                    </div>
+                    <a href="veille-iot.html" class="project-link">
+                        Découvrir la veille <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Projet KOO2fourchette -->
+                <div class="project-card" data-category="dev" data-animate>
+                    <div class="project-icon orange-bg">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3 class="project-title">KOO2fourchette</h3>
+                    <p class="project-description">
+                        Site web de recettes culinaires réalisé en 1ère année (S1). Projet mêlant 
+                        développement web et configuration réseau avec système de recherche avancé.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">HTML5</span>
+                        <span class="tag">CSS3</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">PHP</span>
+                        <span class="tag">MySQL</span>
+                        <span class="tag">Réseau</span>
+                    </div>
+                    <button class="project-link" onclick="openModal('kooModal')">
+                        Voir les détails <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <!-- M2L - Première année -->
+                <div class="project-card" data-category="reseau" data-animate>
+                    <div class="project-icon green-bg">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3 class="project-title">M2L - Première année</h3>
+                    <p class="project-description">
+                        Projet de 1ère année BTS SIO (Semestre 2). Conception d'une architecture réseau complète 
+                        avec DMZ, services internes, et réseau local. Configuration des routeurs, VLANs et services réseau.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Routeurs Cisco</span>
+                        <span class="tag">DMZ</span>
+                        <span class="tag">Services Réseau</span>
+                        <span class="tag">VLANs</span>
+                        <span class="tag">1ère année</span>
+                    </div>
+                    <button class="project-link" onclick="openModal('infraModal')">
+                        Voir les détails <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <!-- M2L - Deuxième année -->
+                <div class="project-card" data-category="reseau" data-animate>
+                    <div class="project-icon blue-bg">
+                        <i class="fas fa-sitemap"></i>
+                    </div>
+                    <h3 class="project-title">M2L - Deuxième année</h3>
+                    <p class="project-description">
+                        Projet actuel de 2ème année BTS SIO. Infrastructure réseau complète segmentée en 4 zones 
+                        (Filaire, Serveurs, Stockage, DMZ) avec routage inter-VLAN et sécurité en profondeur.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">VLANs</span>
+                        <span class="tag">Routage</span>
+                        <span class="tag">DMZ</span>
+                        <span class="tag">Sécurité</span>
+                        <span class="tag">En cours</span>
+                    </div>
+                    <button class="project-link" onclick="openModal('btsModal')">
+                        Voir les détails <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formation & Stage Section -->
+    <section id="stages" class="stages-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Formation & Expérience</h2>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="timeline">
+                <!-- Stage Humans Matter -->
+                <div class="timeline-item">
+                    <div class="timeline-date">
+                        <div class="date-circle">
+                            <span class="year">2026</span>
+                            <span class="period">Jan-Fév</span>
+                        </div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-badge completed">
+                            <i class="fas fa-check"></i> Terminé
+                        </div>
+                        <h3>Stage Technicien Support IT</h3>
+                        <h4><i class="fas fa-building"></i> Humans Matter - Paris</h4>
+                        <p>
+                            Stage de 2 mois au sein du service IT d'une entreprise internationale de design cognitif. 
+                            Immersion complète dans la gestion de parc informatique, cybersécurité et support utilisateur 
+                            dans un environnement hybride multi-sites (PC, Mac, Tablettes).
+                        </p>
+                        
+                        <div class="timeline-missions">
+                            <h5><i class="fas fa-tasks"></i> Missions techniques réalisées :</h5>
+                            <ul>
+                                <li><strong>Gestion de flotte mobile :</strong> Déploiement et configuration de tablettes Galaxy Tab A8 via Samsung Knox Manage (MDM)</li>
+                                <li><strong>Cybersécurité :</strong> Audit et nettoyage de la console Bitdefender GravityZone, suppression des machines fantômes</li>
+                                <li><strong>Onboarding :</strong> Préparation et configuration de postes Mac/PC pour nouveaux collaborateurs</li>
+                                <li><strong>Support utilisateur :</strong> Résolution d'incidents quotidiens (Teams, Slack, imprimantes Canon)</li>
+                                <li><strong>Inventaire :</strong> Audit physique complet et mise à jour du parc informatique</li>
+                                <li><strong>Infrastructure :</strong> Immersion en administration serveur (Docker, Linux, WSL2, Vagrant)</li>
+                            </ul>
+                        </div>
+
+                        <div class="timeline-skills">
+                            <span class="skill-badge"><i class="fas fa-mobile-alt"></i> Samsung Knox MDM</span>
+                            <span class="skill-badge"><i class="fas fa-shield-alt"></i> Bitdefender</span>
+                            <span class="skill-badge"><i class="fab fa-apple"></i> MacOS</span>
+                            <span class="skill-badge"><i class="fab fa-windows"></i> Windows</span>
+                            <span class="skill-badge"><i class="fab fa-docker"></i> Docker</span>
+                            <span class="skill-badge"><i class="fab fa-linux"></i> Linux</span>
+                            <span class="skill-badge"><i class="fas fa-headset"></i> Support IT</span>
+                            <span class="skill-badge"><i class="fas fa-database"></i> Inventaire</span>
+                        </div>
+
+                        <div class="timeline-impact">
+                            <div class="impact-item">
+                                <i class="fas fa-lightbulb"></i>
+                                <span>Compétences renforcées en gestion de parc et MDM</span>
+                            </div>
+                            <div class="impact-item">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Expertise en cybersécurité et administration système</span>
+                            </div>
+                            <div class="impact-item">
+                                <i class="fas fa-users"></i>
+                                <span>Développement de compétences en support utilisateur</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stage Giftasso -->
+                <div class="timeline-item">
+                    <div class="timeline-date">
+                        <div class="date-circle">
+                            <span class="year">2025</span>
+                            <span class="period">Mai-Juil</span>
+                        </div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-badge completed">
+                            <i class="fas fa-check"></i> Terminé
+                        </div>
+                        <h3>Stage Développeur Web</h3>
+                        <h4><i class="fas fa-building"></i> Giftasso (développée par Metacard)</h4>
+                        <p>
+                            Stage de 3 mois axé sur le développement d'une plateforme e-commerce complète. 
+                            Participation active au développement du site marchand et mise en place du processus 
+                            de vente final.
+                        </p>
+                        
+                        <div class="timeline-missions">
+                            <h5><i class="fas fa-tasks"></i> Missions réalisées :</h5>
+                            <ul>
+                                <li>Développement front-end et back-end du site Giftasso</li>
+                                <li>Intégration de solutions de paiement sécurisées</li>
+                                <li>Optimisation de l'interface utilisateur (UX/UI)</li>
+                                <li>Tests et déploiement de la plateforme</li>
+                                <li>Maintenance et corrections de bugs</li>
+                            </ul>
+                        </div>
+
+                        <div class="timeline-skills">
+                            <span class="skill-badge"><i class="fab fa-html5"></i> HTML/CSS</span>
+                            <span class="skill-badge"><i class="fab fa-js"></i> JavaScript</span>
+                            <span class="skill-badge"><i class="fab fa-php"></i> PHP</span>
+                            <span class="skill-badge"><i class="fas fa-database"></i> MySQL</span>
+                            <span class="skill-badge"><i class="fas fa-shopping-cart"></i> E-commerce</span>
+                        </div>
+
+                        <div class="timeline-impact">
+                            <div class="impact-item">
+                                <i class="fas fa-certificate"></i>
+                                <span>Compétences renforcées en développement web</span>
+                            </div>
+                            <div class="impact-item">
+                                <i class="fas fa-lightbulb"></i>
+                                <span>Confirmation de ma passion pour les infrastructures réseau</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BTS SIO - 2ème année -->
+                <div class="timeline-item">
+                    <div class="timeline-date">
+                        <div class="date-circle">
+                            <span class="year">2025-26</span>
+                            <span class="period">En cours</span>
+                        </div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-badge ongoing">
+                            <i class="fas fa-spinner"></i> En cours
+                        </div>
+                        <h3>BTS SIO option SISR - 2ème année</h3>
+                        <h4><i class="fas fa-school"></i> Établissement scolaire</h4>
+                        <p>
+                            Approfondissement des compétences en administration système, réseau et sécurité. 
+                            Spécialisation dans les infrastructures et la virtualisation.
+                        </p>
+                        
+                        <div class="timeline-modules">
+                            <h5><i class="fas fa-book"></i> Modules principaux :</h5>
+                            <div class="modules-grid">
+                                <div class="module-item">
+                                    <i class="fas fa-server"></i>
+                                    <span>Administration systèmes</span>
+                                </div>
+                                <div class="module-item">
+                                    <i class="fas fa-network-wired"></i>
+                                    <span>Réseaux & routage</span>
+                                </div>
+                                <div class="module-item">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <span>Cybersécurité</span>
+                                </div>
+                                <div class="module-item">
+                                    <i class="fas fa-database"></i>
+                                    <span>Bases de données</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BTS SIO - 1ère année -->
+                <div class="timeline-item">
+                    <div class="timeline-date">
+                        <div class="date-circle">
+                            <span class="year">2024-25</span>
+                            <span class="period">Terminé</span>
+                        </div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-badge completed">
+                            <i class="fas fa-check"></i> Validé
+                        </div>
+                        <h3>BTS SIO option SISR - 1ère année</h3>
+                        <h4><i class="fas fa-school"></i> Établissement scolaire</h4>
+                        <p>
+                            Acquisition des fondamentaux en informatique : développement, réseaux, 
+                            bases de données et méthodologies de projet.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Me contacter</h2>
+                <div class="section-divider"></div>
+                <p class="section-subtitle">N'hésitez pas à me contacter pour toute opportunité ou question</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-card" onclick="window.open('mailto:rayanseghour@gmail.com')">
+                    <div class="contact-icon email-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email</h3>
+                    <p>rayanseghour@gmail.com</p>
+                    <button class="copy-email-btn" data-copy="rayanseghour@gmail.com" onclick="event.stopPropagation()">
+                        <i class="fas fa-copy"></i> Copier l'email
+                    </button>
+                    <span class="contact-action">Envoyer un email <i class="fas fa-arrow-right"></i></span>
+                </div>
+
+                <div class="contact-card" onclick="window.open('tel:+33767090441')">
+                    <div class="contact-icon phone-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>Téléphone</h3>
+                    <p>+33 7 67 09 04 41</p>
+                    <span class="contact-action">Appeler <i class="fas fa-arrow-right"></i></span>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon location-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Localisation</h3>
+                    <p>Île-de-France, France</p>
+                    <span class="contact-action">Disponible pour opportunités</span>
+                </div>
+            </div>
+
+            <div class="contact-cta">
+                <button class="btn btn-large" onclick="window.open('mailto:rayanseghour@gmail.com')">
+                    <i class="fas fa-paper-plane"></i>
+                    Envoyer un message
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <div class="footer-logo">SR</div>
+                    <p>Étudiant BTS SIO SISR</p>
+                    <p>Passionné par les réseaux et l'IoT</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Navigation</h4>
+                    <a href="#home">Accueil</a>
+                    <a href="#about">À propos</a>
+                    <a href="#projects">Projets</a>
+                    <a href="veille-iot.html">Veille IoT</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-info">
+                    <h4>Contact</h4>
+                    <p><i class="fas fa-envelope"></i> rayanseghour@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +33 7 67 09 04 41</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Île-de-France, France</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Seghour Rayan. Tous droits réservés.</p>
+                <p>Fait avec <i class="fas fa-heart"></i> et beaucoup de <i class="fas fa-coffee"></i></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <!-- Modal KOO2fourchette -->
+    <div id="kooModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('kooModal')">&times;</span>
+            <div class="modal-header">
+                <i class="fas fa-utensils"></i>
+                <h2>KOO2fourchette</h2>
+            </div>
+            <div class="modal-body">
+                <div class="modal-image-container">
+                    <img src="Image_koo.png" alt="Projet KOO2fourchette" style="width: 100%; border-radius: 1rem; margin-bottom: 2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+                </div>
+                <p>
+                    Site web de recettes culinaires développé en <strong>1ère année BTS SIO</strong> (Semestre 1). 
+                    Ce projet mêlait développement web et configuration réseau avec une architecture complète client-serveur.
+                </p>
+                
+                <h3><i class="fas fa-bullseye"></i> Objectifs du projet</h3>
+                <ul>
+                    <li>Créer une plateforme de partage de recettes intuitive</li>
+                    <li>Développer un système de recherche avancé</li>
+                    <li>Implémenter une gestion de base de données performante</li>
+                    <li>Concevoir une interface responsive et attractive</li>
+                </ul>
+
+                <h3><i class="fas fa-cogs"></i> Fonctionnalités</h3>
+                <ul>
+                    <li>Recherche de recettes par nom, ingrédients ou catégorie</li>
+                    <li>Affichage détaillé des recettes avec images</li>
+                    <li>Système de filtrage avancé</li>
+                    <li>Design responsive pour tous les appareils</li>
+                </ul>
+
+                <h3><i class="fas fa-code"></i> Technologies utilisées</h3>
+                <div class="modal-tags">
+                    <span class="tag">HTML5</span>
+                    <span class="tag">CSS3</span>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">PHP</span>
+                    <span class="tag">MySQL</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Infrastructure Réseau - Projet 1ère année S2 -->
+    <div id="infraModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('infraModal')">&times;</span>
+            <div class="modal-header">
+                <i class="fas fa-network-wired"></i>
+                <h2>M2L - Première année</h2>
+            </div>
+            <div class="modal-body">
+                <div class="modal-image-container">
+                    <img src="Projet_Reseau_MultiZones.png" alt="Schéma M2L Première année" style="width: 100%; border-radius: 1rem; margin-bottom: 2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+                </div>
+                <p>
+                    Conception et mise en œuvre d'une architecture réseau complète avec DMZ, services internes et réseau local.
+                    <strong>Projet de 1ère année BTS SIO</strong> (Semestre 2).
+                </p>
+                
+                <h3><i class="fas fa-bullseye"></i> Objectifs du projet</h3>
+                <ul>
+                    <li>Concevoir une architecture réseau segmentée avec DMZ publique/privée</li>
+                    <li>Configurer les routeurs Cisco et la connectivité inter-zones</li>
+                    <li>Mettre en place des services réseau essentiels (DNS, DHCP, Web)</li>
+                    <li>Sécuriser les communications avec des pare-feu</li>
+                    <li>Assurer l'accès Internet via un réseau local</li>
+                </ul>
+
+                <h3><i class="fas fa-network-wired"></i> Architecture</h3>
+                
+                <div class="zone-description">
+                    <h4 style="color: #00bcd4;"><i class="fas fa-globe"></i> Zone Internet</h4>
+                    <ul>
+                        <li>Connexion via Box (Réseau BHG 305: 172.16.1.0/24)</li>
+                        <li>Point d'accès externe</li>
+                    </ul>
+                </div>
+
+                <div class="zone-description">
+                    <h4 style="color: #cd853f;"><i class="fas fa-shield-alt"></i> DMZ - Zone Marron</h4>
+                    <ul>
+                        <li>Serveur proxy pour filtrage web</li>
+                        <li>IP: 192.168.0.0/25</li>
+                        <li>Isolation des services publics</li>
+                    </ul>
+                </div>
+
+                <div class="zone-description">
+                    <h4 style="color: #ff6b6b;"><i class="fas fa-server"></i> Service Info - Zone Rouge</h4>
+                    <ul>
+                        <li>Serveurs d'applications internes</li>
+                        <li>IP: 172.16.2.0/27</li>
+                        <li>Services critiques protégés</li>
+                    </ul>
+                </div>
+
+                <div class="zone-description">
+                    <h4 style="color: #51cf66;"><i class="fas fa-desktop"></i> Réseau Local MCA - Zone Verte</h4>
+                    <ul>
+                        <li>Postes clients et périphériques</li>
+                        <li>IP: 172.16.1.1 - 172.16.1.14/28</li>
+                        <li>Accès contrôlé aux ressources</li>
+                    </ul>
+                </div>
+
+                <h3><i class="fas fa-sitemap"></i> Équipements réseau</h3>
+                <ul>
+                    <li><strong>3 Routeurs Cisco</strong> : R1/AS (edge), RM2L (cœur), Rutgers (distribution)</li>
+                    <li><strong>Switches</strong> : SW-Distribution, SW-Accès 1 & 2</li>
+                    <li><strong>Serveurs</strong> : Terminaux, serveurs applicatifs</li>
+                </ul>
+
+                <h3><i class="fas fa-check-circle"></i> Compétences développées</h3>
+                <ul>
+                    <li>Configuration avancée de routeurs Cisco</li>
+                    <li>Segmentation réseau et gestion des VLANs</li>
+                    <li>Conception d'architectures DMZ sécurisées</li>
+                    <li>Adressage IP et sous-réseaux</li>
+                    <li>Documentation technique d'infrastructure</li>
+                </ul>
+
+                <h3><i class="fas fa-tools"></i> Technologies utilisées</h3>
+                <div class="modal-tags">
+                    <span class="tag">Cisco IOS</span>
+                    <span class="tag">Routage</span>
+                    <span class="tag">VLANs</span>
+                    <span class="tag">DMZ</span>
+                    <span class="tag">Packet Tracer</span>
+                    <span class="tag">Adressage IP</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal BTS Infrastructure -->
+    <div id="btsModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('btsModal')">&times;</span>
+            <div class="modal-header">
+                <i class="fas fa-sitemap"></i>
+                <h2>M2L - Deuxième année</h2>
+            </div>
+            <div class="modal-body">
+                <div class="modal-image-container">
+                    <img src="image.png" alt="Schéma Infrastructure Multi-Zones" style="width: 100%; border-radius: 1rem; margin-bottom: 2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+                </div>
+                <p>
+                    Infrastructure réseau complète avec segmentation en 4 zones colorées pour sécurité optimale. 
+                    <strong>Projet actuel de 2ème année BTS SIO</strong> (année complète 2025-2026).
+                </p>
+                
+                <h3><i class="fas fa-layer-group"></i> Architecture en 4 zones</h3>
+                
+                <div class="zone-description">
+                    <h4 style="color: #00bcd4;"><i class="fas fa-desktop"></i> Zone Cyan - Réseau Filaire</h4>
+                    <ul>
+                        <li>Postes clients (PC, Laptop) avec accès filaire</li>
+                        <li>Téléphones IP</li>
+                        <li>Commutateurs Cisco avec VLANs</li>
+                        <li>Plage IP : 172.16.X.X/24</li>
+                    </ul>
+                </div>
+
+                <div class="zone-description">
+                    <h4 style="color: #ff9800;"><i class="fas fa-server"></i> Zone Orange - Serveurs d'Application</h4>
+                    <ul>
+                        <li>Serveur Asterisk (PABX IP)</li>
+                        <li>Serveur DHCP</li>
+                        <li>Active Directory</li>
+                        <li>Supervision des services</li>
+                        <li>Plage IP : 172.16.2.224/27</li>
+                    </ul>
+                </div>
+
+                <div class="zone-description">
+                    <h4 style="color: #ffc107;"><i class="fas fa-database"></i> Zone Jaune - Stockage & BDD</h4>
+                    <ul>
+                        <li>Serveurs Web (WordPress)</li>
+                        <li>Systèmes de stockage (SAN/NAS)</li>
+                        <li>Serveurs de backup</li>
+                        <li>Plage IP : 192.168.1.0/28</li>
+                    </ul>
+                </div>
+
+                <div class="zone-description">
+                    <h4 style="color: #4caf50;"><i class="fas fa-shield-alt"></i> Zone Verte - DMZ</h4>
+                    <ul>
+                        <li>Serveur FTP public</li>
+                        <li>Services exposés à Internet</li>
+                        <li>Isolation maximale</li>
+                        <li>Plage IP : 192.168.0.0/29</li>
+                    </ul>
+                </div>
+
+                <h3><i class="fas fa-shield-alt"></i> Sécurité & Résilience</h3>
+                <ul>
+                    <li><strong>Segmentation réseau :</strong> VLANs et pare-feu entre zones</li>
+                    <li><strong>Chiffrement :</strong> Protocoles sécurisés (SSH, HTTPS)</li>
+                    <li><strong>Redondance :</strong> Hyperviseur pour haute disponibilité</li>
+                    <li><strong>Supervision :</strong> Monitoring continu des services</li>
+                </ul>
+
+                <h3><i class="fas fa-tools"></i> Technologies</h3>
+                <div class="modal-tags">
+                    <span class="tag">Cisco IOS</span>
+                    <span class="tag">VLAN 802.1Q</span>
+                    <span class="tag">Linux Ubuntu</span>
+                    <span class="tag">Asterisk</span>
+                    <span class="tag">WordPress</span>
+                    <span class="tag">MySQL</span>
+                    <span class="tag">FTP/SFTP</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bouton Retour en haut -->
+    <button class="back-to-top" id="back-to-top" aria-label="Retour en haut">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script-pro.js"></script>
+</body>
+</html>
