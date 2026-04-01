@@ -946,8 +946,8 @@ body {
 }
 
 .date-circle {
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 70px;
   border-radius: var(--radius-full);
   background: var(--primary-gradient);
   color: white;
@@ -956,15 +956,22 @@ body {
   align-items: center;
   justify-content: center;
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   font-weight: 700;
   box-shadow: var(--shadow-colored);
   position: relative;
   z-index: 1;
+  text-align: center;
 }
 
 .date-circle .year {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
+  line-height: 1.2;
+}
+
+.date-circle .period {
+  font-size: 0.7rem;
+  line-height: 1.2;
 }
 
 .timeline-content {
@@ -1595,3 +1602,154 @@ body {
 .mb-2 { margin-bottom: var(--spacing-sm); }
 .mb-3 { margin-bottom: var(--spacing-md); }
 .mb-4 { margin-bottom: var(--spacing-lg); }
+
+/* Boutons rapport de stage */
+.timeline-report {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid #e2e8f0;
+}
+
+.report-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.report-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+.report-button i {
+    font-size: 1.2rem;
+}
+
+/* Transitions pour les projets filtrés */
+.project-card {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.project-card.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+}
+
+/* Styles pour les boutons de filtre */
+.filter-btn {
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    transform: translateY(-2px);
+}
+
+/* === CORRECTIONS GÉNÉRALES DIMENSIONS === */
+
+/* Container principal - uniformisation */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    width: 100%;
+}
+
+/* Sections padding uniforme */
+section {
+    padding: 5rem 0;
+    scroll-margin-top: 100px; /* Pour le scroll avec navbar fixe */
+}
+
+/* Hero section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Sections avec background */
+.about-section,
+.skills-section,
+.certifications-section,
+.projects-section,
+.stages-section,
+.contact-section {
+    scroll-margin-top: 100px;
+}
+
+/* Navbar fixe - hauteur uniforme */
+.navbar {
+    height: 80px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Responsive containers */
+@media (max-width: 1280px) {
+    .container {
+        max-width: 95%;
+        padding: 0 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 1rem;
+    }
+    
+    section {
+        padding: 3rem 0;
+    }
+    
+    .hero {
+        min-height: 90vh;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 0.75rem;
+    }
+}
+
+/* Corrections grilles projets */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+/* Corrections certifications */
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+@media (max-width: 768px) {
+    .certifications-grid {
+        grid-template-columns: 1fr;
+    }
+}

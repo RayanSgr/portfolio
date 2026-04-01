@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Procédures M2L - Rayan Seghour</title>
+    <link rel="stylesheet" href="procedures-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <i class="fas fa-arrow-left"></i> Retour au portfolio
+            </a>
+            <div class="nav-links">
+                <a href="#documentation" class="nav-link">Documentation</a>
+                <a href="#procedures" class="nav-link">Procédures</a>
+                <a href="#architecture" class="nav-link">Architecture</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="project-header">
+        <div class="header-content">
+            <div class="header-badge">
+                <i class="fas fa-network-wired"></i> Projet BTS SIO SISR - 2ème année
+            </div>
+            <h1 class="project-title">Infrastructure Réseau M2L</h1>
+            <p class="project-subtitle">
+                Documentation technique complète - Maison des Ligues (M2L) Saint-Aspais
+            </p>
+            <div class="header-meta">
+                <span><i class="fas fa-calendar"></i> 2025-2026</span>
+                <span><i class="fas fa-building"></i> M2L Saint-Aspais</span>
+                <span><i class="fas fa-file-pdf"></i> 6 Procédures + Cahier des charges</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Schéma Réseau Section -->
+    <section id="architecture" class="schema-section">
+        <div class="container">
+            <div class="section-header">
+                <h2><i class="fas fa-sitemap"></i> Schéma de l'infrastructure</h2>
+                <p>Architecture réseau complète avec DMZ publique et privée</p>
+            </div>
+            <div class="schema-container">
+                <img src="Schema_Reseau_M2L.png" alt="Schéma Infrastructure M2L" class="schema-image">
+                <div class="schema-legend">
+                    <div class="legend-item">
+                        <span class="color-box" style="background: #4caf50;"></span>
+                        <span>DMZ Publique (192.168.0.0/29)</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="color-box" style="background: #ff9800;"></span>
+                        <span>DMZ Privée (192.168.1.0/28)</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="color-box" style="background: #f44336;"></span>
+                        <span>VLAN Informatique (172.16.2.224/27)</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="color-box" style="background: #00bcd4;"></span>
+                        <span>VLANs Ligues (172.16.X.0/24)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cahier des charges -->
+    <section id="documentation" class="cahier-section">
+        <div class="container">
+            <div class="section-header">
+                <h2><i class="fas fa-file-contract"></i> Cahier des charges</h2>
+                <p>Spécifications complètes du projet M2L</p>
+            </div>
+            <div class="cahier-card">
+                <div class="cahier-icon">
+                    <i class="fas fa-book"></i>
+                </div>
+                <div class="cahier-content">
+                    <h3>Cahier des charges de la M2L Saint-Aspais</h3>
+                    <p>Document complet décrivant l'infrastructure réseau, le plan d'adressage IP, les VLANs, les services déployés, et les règles de sécurité.</p>
+                    <ul class="cahier-specs">
+                        <li><i class="fas fa-check"></i> Architecture réseau globale</li>
+                        <li><i class="fas fa-check"></i> Plan d'adressage IP complet</li>
+                        <li><i class="fas fa-check"></i> Services et applications</li>
+                        <li><i class="fas fa-check"></i> Règles de contrôle d'accès</li>
+                        <li><i class="fas fa-check"></i> Schémas réseau détaillés</li>
+                    </ul>
+                </div>
+                <div class="cahier-download">
+                    <a href="Cahier_des_charges_de_la_M2L_st-Aspais.pdf" target="_blank" class="download-btn-large">
+                        <i class="fas fa-download"></i>
+                        <span>Télécharger</span>
+                        <small>PDF - 268 Ko</small>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vue d'ensemble technique -->
+    <section class="overview-section">
+        <div class="container">
+            <div class="section-header">
+                <h2><i class="fas fa-info-circle"></i> Vue d'ensemble technique</h2>
+            </div>
+            <div class="overview-grid">
+                <div class="overview-card">
+                    <div class="overview-icon" style="background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3>HAProxy</h3>
+                    <p>Répartition de charge HTTP/HTTPS en round-robin vers WEB1 et WEB2. Interface de monitoring sur port 8080.</p>
+                    <div class="tech-tags">
+                        <span>Load Balancing</span>
+                        <span>Round-Robin</span>
+                        <span>Health Check</span>
+                    </div>
+                </div>
+
+                <div class="overview-card">
+                    <div class="overview-icon" style="background: linear-gradient(135deg, #f44336 0%, #e53935 100%);">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>PfSense</h3>
+                    <p>Pare-feu multi-interfaces avec IDS Snort, NAT, règles de filtrage avancées entre DMZ publique, privée et réseau interne.</p>
+                    <div class="tech-tags">
+                        <span>Firewall</span>
+                        <span>IDS Snort</span>
+                        <span>NAT</span>
+                    </div>
+                </div>
+
+                <div class="overview-card">
+                    <div class="overview-icon" style="background: linear-gradient(135deg, #2196f3 0%, #1976d2 100%);">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>MariaDB</h3>
+                    <p>Réplication Master-Slave en temps réel. SGBD1 (Master) réplique vers SGBD2 (Slave) pour haute disponibilité.</p>
+                    <div class="tech-tags">
+                        <span>Master/Slave</span>
+                        <span>Réplication</span>
+                        <span>HA</span>
+                    </div>
+                </div>
+
+                <div class="overview-card">
+                    <div class="overview-icon" style="background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Serveurs Web</h3>
+                    <p>WEB1 (site vitrine) et WEB2 (sites ligues) avec Apache, PHP 8.2, WordPress connectés aux bases distantes.</p>
+                    <div class="tech-tags">
+                        <span>Apache</span>
+                        <span>WordPress</span>
+                        <span>PHP 8.2</span>
+                    </div>
+                </div>
+
+                <div class="overview-card">
+                    <div class="overview-icon" style="background: linear-gradient(135deg, #9c27b0 0%, #7b1fa2 100%);">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>Nextcloud</h3>
+                    <p>Plateforme collaborative avec dossier par ligue (lecture/écriture) + dossier commun M2L (lecture seule).</p>
+                    <div class="tech-tags">
+                        <span>Collaboration</span>
+                        <span>Partage</span>
+                        <span>Cloud</span>
+                    </div>
+                </div>
+
+                <div class="overview-card">
+                    <div class="overview-icon" style="background: linear-gradient(135deg, #00bcd4 0%, #0097a7 100%);">
+                        <i class="fas fa-folder-open"></i>
+                    </div>
+                    <h3>Serveur FTP</h3>
+                    <p>vsftpd en DMZ publique avec mode passif (ports 40000-40100). Accessible depuis Internet via NAT.</p>
+                    <div class="tech-tags">
+                        <span>vsftpd</span>
+                        <span>Mode PASV</span>
+                        <span>Public</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Procédures Section -->
+    <section id="procedures" class="procedures-section">
+        <div class="container">
+            <div class="section-header">
+                <h2><i class="fas fa-file-pdf"></i> Procédures de déploiement</h2>
+                <p>Documentation technique complète - Configuration étape par étape</p>
+            </div>
+
+            <div class="procedures-grid">
+                <!-- HAProxy -->
+                <div class="procedure-card">
+                    <div class="procedure-header" style="background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);">
+                        <i class="fas fa-balance-scale"></i>
+                        <h3>HAProxy</h3>
+                        <span class="procedure-badge">DMZ Publique</span>
+                    </div>
+                    <div class="procedure-body">
+                        <div class="procedure-info">
+                            <span><i class="fas fa-network-wired"></i> 192.168.0.1/29</span>
+                            <span><i class="fas fa-server"></i> M2L-HAPROXY</span>
+                        </div>
+                        <h4>Contenu de la procédure :</h4>
+                        <ul class="procedure-steps">
+                            <li>Configuration IP fixe</li>
+                            <li>Installation HAProxy</li>
+                            <li>Configuration round-robin</li>
+                            <li>Interface de monitoring (8080)</li>
+                            <li>Tests de bascule</li>
+                        </ul>
+                        <div class="procedure-tech">
+                            <span>Debian 12</span>
+                            <span>HAProxy 2.8</span>
+                            <span>Load Balancing</span>
+                        </div>
+                    </div>
+                    <div class="procedure-footer">
+                        <a href="Procedure_HAProxy.pdf" target="_blank" class="procedure-btn">
+                            <i class="fas fa-download"></i> Télécharger la procédure
+                        </a>
+                    </div>
+                </div>
+
+                <!-- PfSense -->
+                <div class="procedure-card">
+                    <div class="procedure-header" style="background: linear-gradient(135deg, #f44336 0%, #e53935 100%);">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>PfSense</h3>
+                        <span class="procedure-badge">Pare-feu Principal</span>
+                    </div>
+                    <div class="procedure-body">
+                        <div class="procedure-info">
+                            <span><i class="fas fa-network-wired"></i> Multi-interfaces</span>
+                            <span><i class="fas fa-server"></i> DMZ Pub + Privée</span>
+                        </div>
+                        <h4>Contenu de la procédure :</h4>
+                        <ul class="procedure-steps">
+                            <li>Installation PfSense</li>
+                            <li>Configuration interfaces (WAN, LAN, OPT1, OPT2)</li>
+                            <li>Règles de pare-feu</li>
+                            <li>Configuration NAT (Port Forward)</li>
+                            <li>Installation et configuration Snort IDS</li>
+                        </ul>
+                        <div class="procedure-tech">
+                            <span>PfSense</span>
+                            <span>Snort IDS</span>
+                            <span>NAT</span>
+                        </div>
+                    </div>
+                    <div class="procedure-footer">
+                        <a href="Procedure_PfSense.pdf" target="_blank" class="procedure-btn">
+                            <i class="fas fa-download"></i> Télécharger la procédure
+                        </a>
+                    </div>
+                </div>
+
+                <!-- MariaDB -->
+                <div class="procedure-card">
+                    <div class="procedure-header" style="background: linear-gradient(135deg, #2196f3 0%, #1976d2 100%);">
+                        <i class="fas fa-database"></i>
+                        <h3>MariaDB Réplication</h3>
+                        <span class="procedure-badge">DMZ Privée</span>
+                    </div>
+                    <div class="procedure-body">
+                        <div class="procedure-info">
+                            <span><i class="fas fa-network-wired"></i> Master: 192.168.1.4</span>
+                            <span><i class="fas fa-network-wired"></i> Slave: 192.168.1.5</span>
+                        </div>
+                        <h4>Contenu de la procédure :</h4>
+                        <ul class="procedure-steps">
+                            <li>Installation MariaDB (Master + Slave)</li>
+                            <li>Configuration Master SGBD1</li>
+                            <li>Configuration Slave SGBD2</li>
+                            <li>Création des bases (wordpress_m2l, glpi)</li>
+                            <li>Tests de réplication</li>
+                        </ul>
+                        <div class="procedure-tech">
+                            <span>MariaDB</span>
+                            <span>Master/Slave</span>
+                            <span>Réplication</span>
+                        </div>
+                    </div>
+                    <div class="procedure-footer">
+                        <a href="Procedure_MariaDB_Replication.pdf" target="_blank" class="procedure-btn">
+                            <i class="fas fa-download"></i> Télécharger la procédure
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Serveurs Web -->
+                <div class="procedure-card">
+                    <div class="procedure-header" style="background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);">
+                        <i class="fas fa-globe"></i>
+                        <h3>Serveurs Web</h3>
+                        <span class="procedure-badge">Apache + WordPress</span>
+                    </div>
+                    <div class="procedure-body">
+                        <div class="procedure-info">
+                            <span><i class="fas fa-network-wired"></i> WEB1: 192.168.1.2</span>
+                            <span><i class="fas fa-network-wired"></i> WEB2: 192.168.1.3</span>
+                        </div>
+                        <h4>Contenu de la procédure :</h4>
+                        <ul class="procedure-steps">
+                            <li>Installation Apache + PHP 8.2</li>
+                            <li>Configuration bases distantes</li>
+                            <li>Installation WordPress</li>
+                            <li>Configuration VirtualHost</li>
+                            <li>Synchronisation WEB1 ↔ WEB2</li>
+                        </ul>
+                        <div class="procedure-tech">
+                            <span>Apache</span>
+                            <span>WordPress</span>
+                            <span>PHP 8.2</span>
+                        </div>
+                    </div>
+                    <div class="procedure-footer">
+                        <a href="Procedure_Serveurs_WEB.pdf" target="_blank" class="procedure-btn">
+                            <i class="fas fa-download"></i> Télécharger la procédure
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Nextcloud -->
+                <div class="procedure-card">
+                    <div class="procedure-header" style="background: linear-gradient(135deg, #9c27b0 0%, #7b1fa2 100%);">
+                        <i class="fas fa-cloud"></i>
+                        <h3>Nextcloud</h3>
+                        <span class="procedure-badge">VLAN Informatique</span>
+                    </div>
+                    <div class="procedure-body">
+                        <div class="procedure-info">
+                            <span><i class="fas fa-network-wired"></i> 172.16.2.249/27</span>
+                            <span><i class="fas fa-server"></i> M2L-NEXTCLOUD</span>
+                        </div>
+                        <h4>Contenu de la procédure :</h4>
+                        <ul class="procedure-steps">
+                            <li>Installation Nextcloud</li>
+                            <li>Configuration Apache + PHP</li>
+                            <li>Connexion base MariaDB</li>
+                            <li>Création dossiers par ligue</li>
+                            <li>Configuration permissions</li>
+                        </ul>
+                        <div class="procedure-tech">
+                            <span>Nextcloud</span>
+                            <span>Apache</span>
+                            <span>MariaDB</span>
+                        </div>
+                    </div>
+                    <div class="procedure-footer">
+                        <a href="Procedure_Nextcloud.pdf" target="_blank" class="procedure-btn">
+                            <i class="fas fa-download"></i> Télécharger la procédure
+                        </a>
+                    </div>
+                </div>
+
+                <!-- FTP -->
+                <div class="procedure-card">
+                    <div class="procedure-header" style="background: linear-gradient(135deg, #00bcd4 0%, #0097a7 100%);">
+                        <i class="fas fa-folder-open"></i>
+                        <h3>Serveur FTP</h3>
+                        <span class="procedure-badge">DMZ Publique</span>
+                    </div>
+                    <div class="procedure-body">
+                        <div class="procedure-info">
+                            <span><i class="fas fa-network-wired"></i> 192.168.0.2/29</span>
+                            <span><i class="fas fa-server"></i> M2L-FTP</span>
+                        </div>
+                        <h4>Contenu de la procédure :</h4>
+                        <ul class="procedure-steps">
+                            <li>Installation vsftpd</li>
+                            <li>Configuration mode passif (40000-40100)</li>
+                            <li>Création compte utilisateur FTP</li>
+                            <li>Configuration pare-feu UFW</li>
+                            <li>Vérification redirection NAT PfSense</li>
+                        </ul>
+                        <div class="procedure-tech">
+                            <span>vsftpd</span>
+                            <span>Mode PASV</span>
+                            <span>NAT</span>
+                        </div>
+                    </div>
+                    <div class="procedure-footer">
+                        <a href="Procedure_FTP_DMZ.pdf" target="_blank" class="procedure-btn">
+                            <i class="fas fa-download"></i> Télécharger la procédure
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Compétences Section -->
+    <section class="competences-section">
+        <div class="container">
+            <div class="section-header">
+                <h2><i class="fas fa-graduation-cap"></i> Compétences développées</h2>
+            </div>
+            <div class="competences-grid">
+                <div class="competence-item">
+                    <i class="fas fa-network-wired"></i>
+                    <h3>Architecture Réseau</h3>
+                    <p>Conception et déploiement d'infrastructure multi-zones avec segmentation VLAN et isolation DMZ</p>
+                </div>
+                <div class="competence-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Sécurité</h3>
+                    <p>Mise en place de pare-feu, IDS/IPS, règles de filtrage, et isolation réseau</p>
+                </div>
+                <div class="competence-item">
+                    <i class="fas fa-server"></i>
+                    <h3>Administration Linux</h3>
+                    <p>Configuration serveurs Debian, gestion services réseau, scripting bash</p>
+                </div>
+                <div class="competence-item">
+                    <i class="fas fa-balance-scale"></i>
+                    <h3>Haute Disponibilité</h3>
+                    <p>Réplication bases de données, répartition de charge, redondance services</p>
+                </div>
+                <div class="competence-item">
+                    <i class="fas fa-file-alt"></i>
+                    <h3>Documentation</h3>
+                    <p>Rédaction de procédures techniques détaillées et cahiers des charges</p>
+                </div>
+                <div class="competence-item">
+                    <i class="fas fa-cogs"></i>
+                    <h3>Déploiement Services</h3>
+                    <p>Installation et configuration Apache, MariaDB, WordPress, Nextcloud, FTP</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Projet M2L</h3>
+                    <p>Infrastructure réseau complète - BTS SIO SISR 2ème année</p>
+                    <p><i class="fas fa-calendar"></i> 2025-2026</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Documentation</h3>
+                    <ul>
+                        <li><a href="Cahier_des_charges_de_la_M2L_st-Aspais.pdf" target="_blank">Cahier des charges</a></li>
+                        <li><a href="#procedures">6 Procédures techniques</a></li>
+                        <li><a href="#architecture">Schéma réseau</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Navigation</h3>
+                    <ul>
+                        <li><a href="index.html">Retour au portfolio</a></li>
+                        <li><a href="veille-iot.html">Veille technologique IoT</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Rayan Seghour - BTS SIO SISR</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.procedure-card, .overview-card, .competence-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
