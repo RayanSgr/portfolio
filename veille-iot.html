@@ -7,242 +7,8 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="veille-styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        /* Modal aide source */
-        .source-helper-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.85);
-            z-index: 10000;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .source-helper-modal.active {
-            display: flex;
-        }
-
-        .source-helper-content {
-            background: white;
-            border-radius: 1.5rem;
-            padding: 2.5rem;
-            max-width: 700px;
-            width: 90%;
-            max-height: 80vh;
-            overflow-y: auto;
-            position: relative;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-        }
-
-        .source-helper-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 2px solid #e5e7eb;
-        }
-
-        .source-helper-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.8rem;
-        }
-
-        .source-helper-title h3 {
-            font-size: 1.5rem;
-            color: #1f2937;
-            margin: 0;
-        }
-
-        .source-helper-title p {
-            color: #6b7280;
-            margin: 0.25rem 0 0 0;
-            font-size: 0.95rem;
-        }
-
-        .source-helper-close {
-            position: absolute;
-            top: 1.5rem;
-            right: 1.5rem;
-            background: #f3f4f6;
-            border: none;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            font-size: 1.5rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s;
-        }
-
-        .source-helper-close:hover {
-            background: #e5e7eb;
-            transform: rotate(90deg);
-        }
-
-        .source-section {
-            margin-bottom: 2rem;
-        }
-
-        .source-section h4 {
-            color: #1f2937;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .source-section h4 i {
-            color: #667eea;
-        }
-
-        .key-quote {
-            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
-            border-left: 4px solid #f59e0b;
-            padding: 1rem 1.5rem;
-            border-radius: 0.5rem;
-            margin-bottom: 1rem;
-            font-style: italic;
-            color: #78350f;
-        }
-
-        .search-terms {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 1rem;
-        }
-
-        .search-term {
-            background: #ede9fe;
-            color: #5b21b6;
-            padding: 0.5rem 1rem;
-            border-radius: 2rem;
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
-
-        .oral-tip {
-            background: #f0fdf4;
-            border: 2px solid #86efac;
-            border-radius: 0.75rem;
-            padding: 1.25rem;
-            margin-top: 1.5rem;
-        }
-
-        .oral-tip h4 {
-            color: #166534;
-            margin: 0 0 0.75rem 0;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .oral-tip p {
-            color: #166534;
-            margin: 0;
-            line-height: 1.7;
-        }
-
-        .source-helper-actions {
-            display: flex;
-            gap: 1rem;
-            margin-top: 2rem;
-            padding-top: 1.5rem;
-            border-top: 2px solid #e5e7eb;
-        }
-
-        .btn-open-source {
-            flex: 1;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border: none;
-            padding: 1rem 2rem;
-            border-radius: 0.75rem;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.75rem;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .btn-open-source:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
-        }
-
-        .btn-cancel {
-            padding: 1rem 2rem;
-            background: #f3f4f6;
-            border: none;
-            border-radius: 0.75rem;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        .btn-cancel:hover {
-            background: #e5e7eb;
-        }
-    </style>
 </head>
 <body class="veille-page">
-
-    <!-- Modal aide source -->
-    <div class="source-helper-modal" id="sourceHelperModal">
-        <div class="source-helper-content">
-            <button class="source-helper-close" onclick="closeSourceHelper()">&times;</button>
-            
-            <div class="source-helper-header">
-                <div class="source-helper-icon">
-                    <i class="fas fa-book-open"></i>
-                </div>
-                <div class="source-helper-title">
-                    <h3 id="sourceTitle">Guide de lecture source</h3>
-                    <p id="sourceOrg">Organisation source</p>
-                </div>
-            </div>
-
-            <div class="source-section">
-                <h4><i class="fas fa-search"></i> Ce que tu dois chercher dans l'article :</h4>
-                <div class="key-quote" id="keyQuote">
-                    Citation clé à trouver dans l'article
-                </div>
-                <div class="search-terms" id="searchTerms">
-                    <!-- Les termes de recherche seront ajoutés ici -->
-                </div>
-            </div>
-
-            <div class="oral-tip">
-                <h4><i class="fas fa-microphone"></i> Ce que tu dois dire à l'oral :</h4>
-                <p id="oralTip">Conseil pour l'oral</p>
-            </div>
-
-            <div class="source-helper-actions">
-                <button class="btn-cancel" onclick="closeSourceHelper()">Annuler</button>
-                <button class="btn-open-source" onclick="openSourceLink()">
-                    <i class="fas fa-external-link-alt"></i>
-                    Ouvrir l'article source
-                </button>
-            </div>
-        </div>
-    </div>
 
     <!-- Navigation -->
     <nav class="navbar">
@@ -286,49 +52,32 @@
                 <h3>Outils et applications utilisés</h3>
                 <div class="outils-grid">
                     <div class="outil-card">
-                        <div class="outil-icon">
-                            <i class="fas fa-rss"></i>
-                        </div>
+                        <div class="outil-icon"><i class="fas fa-rss"></i></div>
                         <h4>Feedly</h4>
                         <p>Agrégateur RSS pour centraliser les flux de TechCrunch, The Verge, Wired, ZDNet</p>
                     </div>
-
                     <div class="outil-card">
-                        <div class="outil-icon">
-                            <i class="fab fa-google"></i>
-                        </div>
+                        <div class="outil-icon"><i class="fab fa-google"></i></div>
                         <h4>Google Alerts</h4>
                         <p>Alertes automatiques sur mots-clés : "Matter IoT", "IoT security", "Cyber Resilience Act"</p>
                     </div>
-
                     <div class="outil-card">
-                        <div class="outil-icon">
-                            <i class="fas fa-bookmark"></i>
-                        </div>
+                        <div class="outil-icon"><i class="fas fa-bookmark"></i></div>
                         <h4>Pocket</h4>
                         <p>Sauvegarde et classification des articles pour lecture approfondie ultérieure</p>
                     </div>
-
                     <div class="outil-card">
-                        <div class="outil-icon">
-                            <i class="fab fa-linkedin"></i>
-                        </div>
+                        <div class="outil-icon"><i class="fab fa-linkedin"></i></div>
                         <h4>LinkedIn</h4>
                         <p>Suivi des experts IoT et fabricants (Samsung, Google, CSA-IoT)</p>
                     </div>
-
                     <div class="outil-card">
-                        <div class="outil-icon">
-                            <i class="fab fa-reddit"></i>
-                        </div>
+                        <div class="outil-icon"><i class="fab fa-reddit"></i></div>
                         <h4>Reddit</h4>
                         <p>Communautés r/homeautomation, r/IoT pour discussions techniques</p>
                     </div>
-
                     <div class="outil-card">
-                        <div class="outil-icon">
-                            <i class="fab fa-twitter"></i>
-                        </div>
+                        <div class="outil-icon"><i class="fab fa-twitter"></i></div>
                         <h4>X (Twitter)</h4>
                         <p>Fil d'actualités temps réel des organisations officielles (CSA, ENISA, ITU)</p>
                     </div>
@@ -344,7 +93,7 @@
             <p>Les événements qui ont marqué l'évolution de l'IoT</p>
         </div>
 
-        <!-- Actualité 1 -->
+        <!-- Actualité 1 - Matter 1.3 -->
         <article class="actualite" id="actualite-matter-1-3">
             <div class="actu-numero">#1</div>
             <div class="actu-header">
@@ -360,7 +109,7 @@
             
             <div class="actu-body">
                 <p class="actu-intro">
-                    Matter 1.3 franchit un cap décisif avec 80% des nouveaux objets connectés vendus désormais compatibles. Google, Apple, Amazon et Samsung adoptent massivement le protocole, marquant la fin de la fragmentation qui caractérisait le secteur.
+                    Matter franchit un cap décisif avec plus de 300 marques partenaires. Google, Apple, Amazon et Samsung adoptent massivement le protocole, marquant la fin de la fragmentation qui caractérisait le secteur IoT.
                 </p>
                 
                 <div class="info-block">
@@ -375,13 +124,13 @@
                     <p>N'importe quelle ampoule certifiée Matter s'intègre instantanément avec Google Home, Apple HomeKit ET Amazon Alexa sans configuration complexe ni application dédiée.</p>
                 </div>
                 
-                <button class="btn-article" onclick="showSourceHelper('matter13', 'https://csa-iot.org/newsroom/matter-1-3-specification-released/')">
-                    <i class="fas fa-external-link-alt"></i> Lire l'article complet sur Matter 1.3 (CSA)
-                </button>
+                <a href="https://www.onoff.gr/blog/fr/maison-intelligente/protocole-matter-2026-le-guide-complet-ce-que-c-est-et/" target="_blank" rel="noopener noreferrer" class="btn-article">
+                    <i class="fas fa-external-link-alt"></i> Lire l'article complet sur Matter (OnOff.gr - Source française)
+                </a>
             </div>
         </article>
 
-        <!-- Actualité 2 -->
+        <!-- Actualité 2 - Caméras IoT -->
         <article class="actualite" id="actualite-cameras">
             <div class="actu-numero">#2</div>
             <div class="actu-header">
@@ -418,9 +167,266 @@
             </div>
         </article>
 
-        <!-- Reste des actualités... (identique) -->
+        <!-- Actualité 3 - Cyber Resilience Act -->
+        <article class="actualite" id="actualite-cyber-resilience-act">
+            <div class="actu-numero">#3</div>
+            <div class="actu-header">
+                <div class="actu-date-card">
+                    <span class="date-mois">OCTOBRE</span>
+                    <span class="date-annee">2025</span>
+                </div>
+                <div class="actu-title-zone">
+                    <h3>Cyber Resilience Act : L'UE impose des mises à jour obligatoires</h3>
+                    <span class="badge-cat">Réglementation</span>
+                </div>
+            </div>
+            
+            <div class="actu-body">
+                <p class="actu-intro">
+                    Entré en vigueur le 10 décembre 2024, le Cyber Resilience Act impose des exigences de cybersécurité obligatoires pour tous les produits comportant des éléments numériques vendus dans l'Union Européenne. Les fabricants doivent garantir des mises à jour de sécurité tout au long du cycle de vie des produits.
+                </p>
+                
+                <div class="info-block">
+                    <p>Le CRA transforme radicalement les obligations des fabricants IoT. Avant cette réglementation, une entreprise pouvait commercialiser des caméras de surveillance et les abandonner 6 mois après sans aucune mise à jour de sécurité. Le Cyber Resilience Act impose désormais un support obligatoire avec mises à jour continues, avec amendes pouvant atteindre 15 millions d'euros ou 2,5% du chiffre d'affaires en cas de non-conformité.</p>
+                </div>
+                
+                <div class="info-block exemple">
+                    <div class="block-header">
+                        <i class="fas fa-chart-line"></i>
+                        <strong>Impact marché</strong>
+                    </div>
+                    <p>Les petites marques low-cost sans infrastructure de support ont disparu du marché européen. Les grandes marques garantissent désormais la sécurité à long terme, incluant le marquage CE obligatoire attestant de la conformité. L'ANFR assure la surveillance du marché en France.</p>
+                </div>
+                
+                <a href="https://cyber.gouv.fr/reglementation/cybersecurite-des-produits/cyber-resilience-act/" target="_blank" rel="noopener noreferrer" class="btn-article">
+                    <i class="fas fa-external-link-alt"></i> Consulter le Cyber Resilience Act (ANSSI - France)
+                </a>
+            </div>
+        </article>
+
+        <!-- Actualité 4 - Samsung Exynos -->
+        <article class="actualite" id="actualite-samsung-exynos">
+            <div class="actu-numero">#4</div>
+            <div class="actu-header">
+                <div class="actu-date-card">
+                    <span class="date-mois">NOVEMBRE</span>
+                    <span class="date-annee">2025</span>
+                </div>
+                <div class="actu-title-zone">
+                    <h3>Samsung Exynos W1000 : Puce 3nm ultra-économe</h3>
+                    <span class="badge-cat">Innovation</span>
+                </div>
+            </div>
+            
+            <div class="actu-body">
+                <p class="actu-intro">
+                    Samsung présente l'Exynos W1000, première puce 3nm dédiée aux objets connectés portables. Cette innovation multiplie par 3,7 les performances tout en divisant par 10 la consommation énergétique par rapport à la génération précédente.
+                </p>
+                
+                <div class="info-block">
+                    <p>La gravure 3nm permet d'intégrer davantage de transistors dans un espace réduit. L'Exynos W1000 utilise une architecture big.LITTLE combinant un cœur haute performance Cortex-A78 et quatre cœurs efficaces Cortex-A55. Le système ajuste dynamiquement la fréquence selon la charge (DVFS), permettant de faire tourner une smartwatch pendant plusieurs jours avec une seule charge.</p>
+                </div>
+                
+                <div class="info-block exemple">
+                    <div class="block-header">
+                        <i class="fas fa-microchip"></i>
+                        <strong>Impact pratique</strong>
+                    </div>
+                    <p>Consommation typique de 50mW contre 500mW sur génération précédente. Une smartwatch peut désormais exécuter des modèles d'IA en local pour reconnaissance vocale ou analyse santé sans vider la batterie.</p>
+                </div>
+                
+                <a href="https://semiconductor.samsung.com/processor/wearable-processor/exynos-w1000/" target="_blank" rel="noopener noreferrer" class="btn-article">
+                    <i class="fas fa-external-link-alt"></i> Découvrir l'Exynos W1000 (Samsung - Fiche technique officielle)
+                </a>
+            </div>
+        </article>
+
+        <!-- Actualité 5 - Matter 1.4 -->
+        <article class="actualite" id="actualite-matter-1-4">
+            <div class="actu-numero">#5</div>
+            <div class="actu-header">
+                <div class="actu-date-card">
+                    <span class="date-mois">DÉCEMBRE</span>
+                    <span class="date-annee">2025</span>
+                </div>
+                <div class="actu-title-zone">
+                    <h3>Matter 1.4 : Expansion de l'écosystème IoT</h3>
+                    <span class="badge-cat">Standard</span>
+                </div>
+            </div>
+            
+            <div class="actu-body">
+                <p class="actu-intro">
+                    Matter 1.4 élargit considérablement le champ d'application du standard avec support de la gestion énergétique avancée : panneaux solaires, batteries domestiques, pompes à chaleur, ballons d'eau chaude et routeurs Matter (HRAP).
+                </p>
+                
+                <div class="info-block">
+                    <p>Les routeurs HRAP (Home Router Access Point) constituent l'innovation majeure de Matter 1.4. Ils permettent aux appareils Matter de communiquer directement via Thread (protocole maillé basse consommation) sans nécessiter de pont supplémentaire. Un routeur HRAP transforme le réseau domestique en infrastructure IoT native.</p>
+                </div>
+                
+                <div class="info-block exemple">
+                    <div class="block-header">
+                        <i class="fas fa-bolt"></i>
+                        <strong>Exemple pratique</strong>
+                    </div>
+                    <p>Un système coordonne automatiquement panneaux solaires, batterie domestique et véhicule électrique. Matter 1.4 optimise la charge du véhicule selon production solaire et tarif électricité en temps réel, sans intervention manuelle.</p>
+                </div>
+                
+                <a href="https://www.onoff.gr/blog/fr/maison-intelligente/protocole-matter-2026-le-guide-complet-ce-que-c-est-et/" target="_blank" rel="noopener noreferrer" class="btn-article">
+                    <i class="fas fa-external-link-alt"></i> En savoir plus sur Matter 1.4 (OnOff.gr - Source française)
+                </a>
+            </div>
+        </article>
+
+        <!-- Actualité 6 - 6G -->
+        <article class="actualite" id="actualite-6g">
+            <div class="actu-numero">#6</div>
+            <div class="actu-header">
+                <div class="actu-date-card">
+                    <span class="date-mois">FÉVRIER</span>
+                    <span class="date-annee">2026</span>
+                </div>
+                <div class="actu-title-zone">
+                    <h3>6G : Performances révolutionnaires attendues vers 2030</h3>
+                    <span class="badge-cat">Infrastructure</span>
+                </div>
+            </div>
+            
+            <div class="actu-body">
+                <p class="actu-intro">
+                    La 6G, attendue vers 2030, affichera un débit théorique de 1 téraoctet par seconde (1 To/s), soit 100 fois supérieur à la 5G, avec une latence inférieure à la milliseconde grâce aux fréquences térahertz (THz).
+                </p>
+                
+                <div class="info-block">
+                    <p>Le 6G utilise des fréquences térahertz (100 GHz à 3 THz), permettant des débits massifs mais avec portée limitée. Cette contrainte nécessite un déploiement dense de petites cellules. La technologie intègre nativement l'IA pour optimiser la gestion du réseau : allocation dynamique des ressources, prédiction du trafic, configuration automatique pour réduire la consommation énergétique.</p>
+                </div>
+                
+                <div class="info-block exemple">
+                    <div class="block-header">
+                        <i class="fas fa-city"></i>
+                        <strong>Applications futures</strong>
+                    </div>
+                    <p>Villes intelligentes avec capteurs temps réel (pollution, trafic, sécurité), chirurgie à distance et robotique connectée nécessitant une approche quasi temps réel, véhicules autonomes coordonnant trajectoires instantanément avec latence sub-milliseconde.</p>
+                </div>
+                
+                <a href="https://www.journaldunet.com/iot/1533751-qu-apportera-reellement-la-6g/" target="_blank" rel="noopener noreferrer" class="btn-article">
+                    <i class="fas fa-external-link-alt"></i> Comprendre la technologie 6G (Journal du Net - Source française)
+                </a>
+            </div>
+        </article>
 
     </main>
+
+    <!-- Sources officielles -->
+    <section class="sources-section">
+        <div class="container">
+            <div class="section-header">
+                <h2><i class="fas fa-link"></i> Sources Officielles</h2>
+                <p>Cliquez sur une source pour accéder à l'actualité correspondante</p>
+            </div>
+
+            <div class="sources-grid">
+                <a href="#actualite-matter-1-3" class="source-card">
+                    <div class="source-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <div class="source-content">
+                        <h4>OnOff.gr</h4>
+                        <p>Guide complet Matter (FR)</p>
+                        <span class="source-badge">Matter 1.3</span>
+                    </div>
+                    <i class="fas fa-arrow-right source-arrow"></i>
+                </a>
+
+                <a href="#actualite-cameras" class="source-card">
+                    <div class="source-icon" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="source-content">
+                        <h4>Clubic</h4>
+                        <p>Média Tech Français</p>
+                        <span class="source-badge">Sécurité IoT</span>
+                    </div>
+                    <i class="fas fa-arrow-right source-arrow"></i>
+                </a>
+
+                <a href="#actualite-cyber-resilience-act" class="source-card">
+                    <div class="source-icon" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <div class="source-content">
+                        <h4>ANSSI</h4>
+                        <p>Agence Nationale Sécurité</p>
+                        <span class="source-badge">Cyber Resilience Act</span>
+                    </div>
+                    <i class="fas fa-arrow-right source-arrow"></i>
+                </a>
+
+                <a href="#actualite-samsung-exynos" class="source-card">
+                    <div class="source-icon" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <div class="source-content">
+                        <h4>Samsung Semiconductor</h4>
+                        <p>Fabricant de puces</p>
+                        <span class="source-badge">Exynos W1000</span>
+                    </div>
+                    <i class="fas fa-arrow-right source-arrow"></i>
+                </a>
+
+                <a href="#actualite-matter-1-4" class="source-card">
+                    <div class="source-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <div class="source-content">
+                        <h4>OnOff.gr</h4>
+                        <p>Guide complet Matter (FR)</p>
+                        <span class="source-badge">Matter 1.4</span>
+                    </div>
+                    <i class="fas fa-arrow-right source-arrow"></i>
+                </a>
+
+                <a href="#actualite-6g" class="source-card">
+                    <div class="source-icon" style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);">
+                        <i class="fas fa-broadcast-tower"></i>
+                    </div>
+                    <div class="source-content">
+                        <h4>Journal du Net</h4>
+                        <p>Média Tech Français</p>
+                        <span class="source-badge">Technologie 6G</span>
+                    </div>
+                    <i class="fas fa-arrow-right source-arrow"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conclusion -->
+    <section class="conclusion">
+        <div class="container">
+            <div class="conclusion-content">
+                <h2>Synthèse et Tendances</h2>
+                <p>Ces 6 actualités révèlent 3 tendances majeures qui redéfinissent l'IoT :</p>
+                <div class="tendances-grid">
+                    <div class="tendance-card">
+                        <div class="tendance-icon"><i class="fas fa-link"></i></div>
+                        <h3>Unification</h3>
+                        <p>Matter s'impose comme standard universel, mettant fin à la fragmentation des protocoles IoT</p>
+                    </div>
+                    <div class="tendance-card">
+                        <div class="tendance-icon"><i class="fas fa-shield-alt"></i></div>
+                        <h3>Sécurisation</h3>
+                        <p>Le Cyber Resilience Act force les fabricants à maintenir la sécurité sur le long terme</p>
+                    </div>
+                    <div class="tendance-card">
+                        <div class="tendance-icon"><i class="fas fa-rocket"></i></div>
+                        <h3>Innovation</h3>
+                        <p>Puces ultra-économes et infrastructure 6G ouvrent de nouvelles possibilités</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer>
@@ -431,79 +437,23 @@
 
     <script src="script.js"></script>
     <script>
-        let currentSourceUrl = '';
-
-        // Données pour chaque source
-        const sourceData = {
-            matter13: {
-                title: 'Matter 1.3 Specification Released',
-                org: 'CSA-IoT (Connectivity Standards Alliance)',
-                keyQuote: 'Cherche la section qui parle de "broad industry adoption" et "80% compatibility with new devices". L\'article mentionne également les principaux fabricants (Google, Apple, Amazon, Samsung) qui adoptent le standard.',
-                searchTerms: ['Matter 1.3', 'industry adoption', '80%', 'Google', 'Apple', 'Amazon', 'Samsung', 'interoperability'],
-                oralTip: 'Pour l\'oral, cite : "Selon la CSA, Matter 1.3 atteint 80% de compatibilité avec les nouveaux objets connectés, avec l\'adoption massive des 4 géants : Google, Apple, Amazon et Samsung."'
-            },
-            cameras: {
-                title: 'Thousands of Compromised Security Cameras',
-                org: 'Bitsight (Cybersecurity Analytics)',
-                keyQuote: 'Cherche les sections sur "default passwords", "40,000+ exposed cameras" et "HTTP/RTSP protocols". L\'article détaille comment les caméras avec des mots de passe par défaut sont compromises.',
-                searchTerms: ['40000', 'default passwords', 'admin/admin', 'HTTP', 'RTSP', 'botnet', 'DDoS'],
-                oralTip: 'Pour l\'oral, cite : "L\'étude Bitsight révèle que 40 000+ caméras IoT sont exposées avec des mots de passe par défaut comme admin/admin, permettant l\'accès non autorisé et leur intégration dans des botnets pour attaques DDoS."'
-            }
-        };
-
-        function showSourceHelper(sourceId, url) {
-            const data = sourceData[sourceId];
-            if (!data) {
-                window.open(url, '_blank');
-                return;
-            }
-
-            currentSourceUrl = url;
-
-            // Remplir le modal avec les données
-            document.getElementById('sourceTitle').textContent = data.title;
-            document.getElementById('sourceOrg').textContent = data.org;
-            document.getElementById('keyQuote').textContent = data.keyQuote;
-            document.getElementById('oralTip').textContent = data.oralTip;
-
-            // Ajouter les termes de recherche
-            const searchTermsContainer = document.getElementById('searchTerms');
-            searchTermsContainer.innerHTML = '';
-            data.searchTerms.forEach(term => {
-                const span = document.createElement('span');
-                span.className = 'search-term';
-                span.textContent = term;
-                searchTermsContainer.appendChild(span);
+        // Smooth scroll pour les liens vers les actualités
+        document.querySelectorAll('a[href^="#actualite-"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    targetElement.style.transform = 'scale(1.02)';
+                    targetElement.style.boxShadow = '0 10px 40px rgba(102, 126, 234, 0.3)';
+                    setTimeout(() => {
+                        targetElement.style.transform = '';
+                        targetElement.style.boxShadow = '';
+                    }, 1000);
+                }
             });
-
-            // Afficher le modal
-            document.getElementById('sourceHelperModal').classList.add('active');
-        }
-
-        function closeSourceHelper() {
-            document.getElementById('sourceHelperModal').classList.remove('active');
-            currentSourceUrl = '';
-        }
-
-        function openSourceLink() {
-            if (currentSourceUrl) {
-                window.open(currentSourceUrl, '_blank');
-                closeSourceHelper();
-            }
-        }
-
-        // Fermer avec Escape
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                closeSourceHelper();
-            }
-        });
-
-        // Fermer en cliquant sur le fond
-        document.getElementById('sourceHelperModal').addEventListener('click', (e) => {
-            if (e.target.id === 'sourceHelperModal') {
-                closeSourceHelper();
-            }
         });
     </script>
 </body>
