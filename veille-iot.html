@@ -193,18 +193,18 @@
                     <span class="date-annee">2025</span>
                 </div>
                 <div class="actu-title-zone">
-                    <h3>Crise majeure : Plus de 40 000 caméras IoT exposées en ligne</h3>
+                    <h3>Scandale : Plus de 1,1 million de babyphones exposés en ligne</h3>
                     <span class="badge-cat">Sécurité</span>
                 </div>
             </div>
             
             <div class="actu-body">
                 <p class="actu-intro">
-                    <span class="source-text" data-source="cameras">Une étude de Bitsight révèle que plus de 40 000 caméras de sécurité IoT sont exposées directement sur Internet sans aucune protection. Ces appareils diffusent leurs flux vidéo en direct, accessibles par simple navigateur web.</span>
+                    Un chercheur français, Sammy Azdoufal, révèle une faille béante : plus de 1,1 million de babyphones et caméras connectées de la marque Meari sont totalement exposés sur Internet. Un broker MQTT sans aucune protection permet d'accéder aux flux vidéo en direct depuis 542 jours.
                 </p>
                 
                 <div class="info-block">
-                    <p><span class="source-text" data-source="cameras">La faille principale ? Les mots de passe par défaut jamais modifiés : "admin/admin", "12345", "password". Les chercheurs ont identifié des caméras opérant sur HTTP ou RTSP, permettant à n'importe qui d'accéder aux flux en tapant simplement l'adresse IP correspondante. Ces vulnérabilités transforment des dispositifs de sécurité en portes d'entrée pour espionnage, chantage et attaques DDoS.</span></p>
+                    <p>Le problème ? Un broker MQTT (serveur central qui fait le lien entre caméras et téléphones) complètement ouvert, sans aucune protection. Sammy Azdoufal explique : "Je n'ai rien hacké ni craqué, il n'y a juste aucune protection sur les brokers". Ce serveur est resté exposé pendant 1 041 jours en Europe et aux États-Unis, permettant à n'importe qui d'accéder aux flux vidéo de millions de foyers.</p>
                 </div>
                 
                 <div class="info-block exemple">
@@ -212,7 +212,7 @@
                         <i class="fas fa-exclamation-triangle"></i>
                         <strong>Conséquences réelles</strong>
                     </div>
-                    <p><span class="source-text" data-source="cameras">Ces caméras compromises permettent la surveillance non autorisée de domiciles privés, bureaux et espaces publics. Elles sont également intégrées dans des botnets massifs pour lancer des attaques DDoS capables de paralyser des infrastructures entières.</span></p>
+                    <p>Ces appareils compromis permettent l'espionnage de domiciles privés et la surveillance non autorisée. Pire encore, le chercheur a découvert un accès direct aux bases de données MySQL, MongoDB et Redis de Meari, contenant les informations personnelles des utilisateurs : noms, emails, historiques de connexion. 378 marques partagent ce même backend défaillant, dont plusieurs distribuées en France.</p>
                 </div>
                 
                 <a href="https://www.clubic.com/actualite-603772-scandale-de-babyphones-video-un-chercheur-francais-decouvre-plus-d-un-million-appareils-totalement-exposes.html" target="_blank" rel="noopener noreferrer" class="btn-article">
@@ -363,8 +363,8 @@
                     <p><span class="source-text" data-source="6g">Villes intelligentes avec capteurs temps réel (pollution, trafic, sécurité), véhicules autonomes coordonnant trajectoires instantanément avec latence sub-100 microsecondes, réseaux de santé surveillant millions de patients simultanément avec dispositifs médicaux connectés.</span></p>
                 </div>
                 
-                <a href="https://www.techtarget.com/searchnetworking/definition/6G" target="_blank" rel="noopener noreferrer" class="btn-article">
-                    <i class="fas fa-external-link-alt"></i> Comprendre la technologie 6G (TechTarget - Référence technique)
+                <a href="https://www.journaldunet.com/iot/1533751-qu-apportera-reellement-la-6g/" target="_blank" rel="noopener noreferrer" class="btn-article">
+                    <i class="fas fa-external-link-alt"></i> Comprendre la technologie 6G (Journal du Net - Source française)
                 </a>
             </div>
         </article>
@@ -445,8 +445,8 @@
                         <i class="fas fa-broadcast-tower"></i>
                     </div>
                     <div class="source-content">
-                        <h4>TechTarget</h4>
-                        <p>IT Media Company</p>
+                        <h4>Journal du Net</h4>
+                        <p>Média Tech Français</p>
                         <span class="source-badge">Technologie 6G</span>
                     </div>
                     <i class="fas fa-arrow-right source-arrow"></i>
