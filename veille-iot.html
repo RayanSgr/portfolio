@@ -7,6 +7,43 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="veille-styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* Style pour le texte surligné */
+        .highlight-source {
+            background: linear-gradient(120deg, #fef08a 0%, #fde047 100%);
+            padding: 0.2rem 0.4rem;
+            border-radius: 0.25rem;
+            animation: pulse-highlight 1.5s ease-in-out 3;
+            box-shadow: 0 0 0 3px rgba(250, 204, 21, 0.3);
+        }
+
+        @keyframes pulse-highlight {
+            0%, 100% { 
+                background: linear-gradient(120deg, #fef08a 0%, #fde047 100%);
+                box-shadow: 0 0 0 3px rgba(250, 204, 21, 0.3);
+            }
+            50% { 
+                background: linear-gradient(120deg, #fde047 0%, #fef08a 100%);
+                box-shadow: 0 0 0 5px rgba(250, 204, 21, 0.5);
+            }
+        }
+
+        /* Indicateur visuel à côté du texte surligné */
+        .source-indicator {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: #f59e0b;
+            border-radius: 50%;
+            margin-right: 0.5rem;
+            animation: blink 1s ease-in-out infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+    </style>
 </head>
 <body class="veille-page">
 
@@ -100,23 +137,12 @@
                     </div>
                 </div>
             </div>
-
-            <div class="sources-box">
-                <h3>Sources principales</h3>
-                <div class="sources-list">
-                    <span class="source-tag"><i class="fas fa-check-circle"></i> CSA-IoT (Matter)</span>
-                    <span class="source-tag"><i class="fas fa-check-circle"></i> ENISA (Cybersécurité)</span>
-                    <span class="source-tag"><i class="fas fa-check-circle"></i> Commission UE</span>
-                    <span class="source-tag"><i class="fas fa-check-circle"></i> Samsung</span>
-                    <span class="source-tag"><i class="fas fa-check-circle"></i> ITU (6G)</span>
-                </div>
-            </div>
         </div>
     </section>
 
     <!-- Actualités -->
-    <main class="container veille-main">
-        <div class="section-header">
+    <main class="actualites">
+        <div class="container">
             <h2>6 Actualités Majeures</h2>
             <p>Les événements qui ont marqué l'évolution de l'IoT</p>
         </div>
@@ -137,11 +163,11 @@
             
             <div class="actu-body">
                 <p class="actu-intro">
-                    Matter 1.3 franchit un cap décisif avec 80% des nouveaux objets connectés vendus désormais compatibles. Google, Apple, Amazon et Samsung adoptent massivement le protocole, marquant la fin de la fragmentation qui caractérisait le secteur.
+                    <span class="source-text" data-source="matter13">Matter 1.3 franchit un cap décisif avec 80% des nouveaux objets connectés vendus désormais compatibles. Google, Apple, Amazon et Samsung adoptent massivement le protocole, marquant la fin de la fragmentation qui caractérisait le secteur.</span>
                 </p>
                 
                 <div class="info-block">
-                    <p>Avant Matter, chaque fabricant utilisait son propre protocole propriétaire, créant une incompatibilité entre les écosystèmes. Une ampoule Philips ne fonctionnait pas avec Google Home, une prise TP-Link ne répondait pas à Alexa. Matter élimine ces barrières : un seul standard permet désormais à tous les appareils de communiquer avec tous les assistants vocaux du marché.</p>
+                    <p><span class="source-text" data-source="matter13">Avant Matter, chaque fabricant utilisait son propre protocole propriétaire, créant une incompatibilité entre les écosystèmes. Une ampoule Philips ne fonctionnait pas avec Google Home, une prise TP-Link ne répondait pas à Alexa. Matter élimine ces barrières : un seul standard permet désormais à tous les appareils de communiquer avec tous les assistants vocaux du marché.</span></p>
                 </div>
                 
                 <div class="info-block exemple">
@@ -149,10 +175,10 @@
                         <i class="fas fa-check-circle"></i>
                         <strong>Exemple concret</strong>
                     </div>
-                    <p>N'importe quelle ampoule certifiée Matter s'intègre instantanément avec Google Home, Apple HomeKit ET Amazon Alexa sans configuration complexe ni application dédiée.</p>
+                    <p><span class="source-text" data-source="matter13">N'importe quelle ampoule certifiée Matter s'intègre instantanément avec Google Home, Apple HomeKit ET Amazon Alexa sans configuration complexe ni application dédiée.</span></p>
                 </div>
                 
-                <a href="https://csa-iot.org/newsroom/matter-1-3-specification-released/" target="_blank" rel="noopener noreferrer" class="btn-article">
+                <a href="https://csa-iot.org/newsroom/matter-1-3-specification-released/" target="_blank" rel="noopener noreferrer" class="btn-article" data-highlight="matter13">
                     <i class="fas fa-external-link-alt"></i> Lire l'article complet sur Matter 1.3 (CSA)
                 </a>
             </div>
@@ -174,11 +200,11 @@
             
             <div class="actu-body">
                 <p class="actu-intro">
-                    Une étude de Bitsight révèle que plus de 40 000 caméras de sécurité IoT sont exposées directement sur Internet sans aucune protection. Ces appareils diffusent leurs flux vidéo en direct, accessibles par simple navigateur web.
+                    <span class="source-text" data-source="cameras">Une étude de Bitsight révèle que plus de 40 000 caméras de sécurité IoT sont exposées directement sur Internet sans aucune protection. Ces appareils diffusent leurs flux vidéo en direct, accessibles par simple navigateur web.</span>
                 </p>
                 
                 <div class="info-block">
-                    <p>La faille principale ? Les mots de passe par défaut jamais modifiés : "admin/admin", "12345", "password". Les chercheurs ont identifié des caméras opérant sur HTTP ou RTSP, permettant à n'importe qui d'accéder aux flux en tapant simplement l'adresse IP correspondante. Ces vulnérabilités transforment des dispositifs de sécurité en portes d'entrée pour espionnage, chantage et attaques DDoS.</p>
+                    <p><span class="source-text" data-source="cameras">La faille principale ? Les mots de passe par défaut jamais modifiés : "admin/admin", "12345", "password". Les chercheurs ont identifié des caméras opérant sur HTTP ou RTSP, permettant à n'importe qui d'accéder aux flux en tapant simplement l'adresse IP correspondante. Ces vulnérabilités transforment des dispositifs de sécurité en portes d'entrée pour espionnage, chantage et attaques DDoS.</span></p>
                 </div>
                 
                 <div class="info-block exemple">
@@ -186,10 +212,10 @@
                         <i class="fas fa-exclamation-triangle"></i>
                         <strong>Conséquences réelles</strong>
                     </div>
-                    <p>Ces caméras compromises permettent la surveillance non autorisée de domiciles privés, bureaux et espaces publics. Elles sont également intégrées dans des botnets massifs pour lancer des attaques DDoS capables de paralyser des infrastructures entières.</p>
+                    <p><span class="source-text" data-source="cameras">Ces caméras compromises permettent la surveillance non autorisée de domiciles privés, bureaux et espaces publics. Elles sont également intégrées dans des botnets massifs pour lancer des attaques DDoS capables de paralyser des infrastructures entières.</span></p>
                 </div>
                 
-                <a href="https://www.bitsight.com/blog/bitsight-identifies-thousands-of-compromised-security-cameras" target="_blank" rel="noopener noreferrer" class="btn-article">
+                <a href="https://www.bitsight.com/blog/bitsight-identifies-thousands-of-compromised-security-cameras" target="_blank" rel="noopener noreferrer" class="btn-article" data-highlight="cameras">
                     <i class="fas fa-external-link-alt"></i> Lire le rapport Bitsight sur les caméras exposées
                 </a>
             </div>
@@ -211,11 +237,11 @@
             
             <div class="actu-body">
                 <p class="actu-intro">
-                    Entré en vigueur le 10 décembre 2024, le Cyber Resilience Act impose des exigences de cybersécurité obligatoires pour tous les produits comportant des éléments numériques vendus dans l'Union Européenne. Les fabricants doivent garantir minimum 5 ans de mises à jour de sécurité.
+                    <span class="source-text" data-source="cra">Entré en vigueur le 10 décembre 2024, le Cyber Resilience Act impose des exigences de cybersécurité obligatoires pour tous les produits comportant des éléments numériques vendus dans l'Union Européenne. Les fabricants doivent garantir minimum 5 ans de mises à jour de sécurité.</span>
                 </p>
                 
                 <div class="info-block">
-                    <p>Le CRA transforme radicalement les obligations des fabricants IoT. Avant cette réglementation, une entreprise pouvait commercialiser des caméras de surveillance et les abandonner 6 mois après sans aucune mise à jour de sécurité. Le Cyber Resilience Act impose désormais un support obligatoire de 5 ans minimum, avec amendes pouvant atteindre 15 millions d'euros en cas de non-conformité.</p>
+                    <p><span class="source-text" data-source="cra">Le CRA transforme radicalement les obligations des fabricants IoT. Avant cette réglementation, une entreprise pouvait commercialiser des caméras de surveillance et les abandonner 6 mois après sans aucune mise à jour de sécurité. Le Cyber Resilience Act impose désormais un support obligatoire de 5 ans minimum, avec amendes pouvant atteindre 15 millions d'euros en cas de non-conformité.</span></p>
                 </div>
                 
                 <div class="info-block exemple">
@@ -223,10 +249,10 @@
                         <i class="fas fa-chart-line"></i>
                         <strong>Impact marché</strong>
                     </div>
-                    <p>Les petites marques low-cost sans infrastructure de support ont disparu du marché européen. Les grandes marques ont légèrement augmenté leurs prix mais garantissent désormais la sécurité à long terme, incluant le marquage CE obligatoire attestant de la conformité.</p>
+                    <p><span class="source-text" data-source="cra">Les petites marques low-cost sans infrastructure de support ont disparu du marché européen. Les grandes marques ont légèrement augmenté leurs prix mais garantissent désormais la sécurité à long terme, incluant le marquage CE obligatoire attestant de la conformité.</span></p>
                 </div>
                 
-                <a href="https://digital-strategy.ec.europa.eu/en/policies/cyber-resilience-act" target="_blank" rel="noopener noreferrer" class="btn-article">
+                <a href="https://digital-strategy.ec.europa.eu/en/policies/cyber-resilience-act" target="_blank" rel="noopener noreferrer" class="btn-article" data-highlight="cra">
                     <i class="fas fa-external-link-alt"></i> Consulter le Cyber Resilience Act (Commission UE)
                 </a>
             </div>
@@ -248,22 +274,22 @@
             
             <div class="actu-body">
                 <p class="actu-intro">
-                    Samsung dévoile l'Exynos W1000, premier processeur wearable gravé en 3nm avec architecture big.LITTLE. Cette puce révolutionnaire améliore les performances de 3,7x en multi-cœur tout en réduisant drastiquement la consommation énergétique.
+                    <span class="source-text" data-source="samsung">Samsung présente l'Exynos W1000, première puce 3nm dédiée aux objets connectés portables. Cette innovation multiplie par 3,7 les performances tout en divisant par 10 la consommation énergétique par rapport à la génération précédente.</span>
                 </p>
                 
                 <div class="info-block">
-                    <p>L'Exynos W1000 intègre un cœur haute performance Cortex-A78 et quatre cœurs efficaces Cortex-A55, une première pour un processeur wearable. Grâce au procédé 3nm et à la technologie DVFS (Dynamic Voltage Frequency Scaling), chaque composant fonctionne à tension minimale. Le résultat : performances multipliées par 3 avec une autonomie prolongée.</p>
+                    <p><span class="source-text" data-source="samsung">La gravure 3nm permet d'intégrer davantage de transistors dans un espace réduit. L'Exynos W1000 utilise une architecture big.LITTLE combinant un cœur haute performance Cortex-A78 et quatre cœurs efficaces Cortex-A55. Le système ajuste dynamiquement la fréquence selon la charge (DVFS), permettant de faire tourner une smartwatch pendant plusieurs jours avec une seule charge.</span></p>
                 </div>
                 
                 <div class="info-block exemple">
                     <div class="block-header">
                         <i class="fas fa-microchip"></i>
-                        <strong>Application concrète</strong>
+                        <strong>Impact pratique</strong>
                     </div>
-                    <p>Une smartwatch équipée de l'Exynos W1000 peut exécuter des applications IA embarquées pour reconnaissance vocale et détection d'anomalies tout en maintenant plusieurs jours d'autonomie. Le lancement d'applications clés est 2,7x plus rapide qu'avec la génération précédente.</p>
+                    <p><span class="source-text" data-source="samsung">Consommation typique de 50mW contre 500mW sur génération précédente. Une smartwatch peut désormais exécuter des modèles d'IA en local pour reconnaissance vocale ou analyse santé sans vider la batterie.</span></p>
                 </div>
                 
-                <a href="https://semiconductor.samsung.com/processor/wearable-processor/exynos-w1000/" target="_blank" rel="noopener noreferrer" class="btn-article">
+                <a href="https://semiconductor.samsung.com/processor/wearable-processor/exynos-w1000/" target="_blank" rel="noopener noreferrer" class="btn-article" data-highlight="samsung">
                     <i class="fas fa-external-link-alt"></i> Découvrir l'Exynos W1000 (Samsung Semiconductor)
                 </a>
             </div>
@@ -285,22 +311,22 @@
             
             <div class="actu-body">
                 <p class="actu-intro">
-                    Matter 1.4 apporte des avancées majeures avec la synchronisation multi-écosystèmes améliorée, le support de nouveaux dispositifs de gestion énergétique (panneaux solaires, batteries, pompes à chaleur) et l'infrastructure réseau domestique.
+                    <span class="source-text" data-source="matter14">Matter 1.4 élargit considérablement le champ d'application du standard avec 15 nouvelles catégories d'appareils certifiés : panneaux solaires, batteries domestiques, pompes à chaleur et routeurs Matter (HRAP). Plus de 500 produits sont désormais certifiés Matter 1.4.</span>
                 </p>
                 
                 <div class="info-block">
-                    <p>Matter étend son périmètre bien au-delà des lumières et prises connectées. Le standard englobe désormais les systèmes de gestion d'énergie domestique avec panneaux solaires, batteries de stockage, pompes à chaleur et chauffe-eau. Les routeurs et points d'accès certifiés Matter (HRAP) combinent Wi-Fi et Thread Border Router pour une infrastructure robuste.</p>
+                    <p><span class="source-text" data-source="matter14">Les routeurs HRAP (Home Router Access Point) constituent l'innovation majeure de Matter 1.4. Ils permettent aux appareils Matter de communiquer directement via Thread (protocole maillé basse consommation) sans nécessiter de pont supplémentaire. Un routeur HRAP transforme le réseau domestique en infrastructure IoT native.</span></p>
                 </div>
                 
                 <div class="info-block exemple">
                     <div class="block-header">
-                        <i class="fas fa-solar-panel"></i>
-                        <strong>Scénario d'usage</strong>
+                        <i class="fas fa-bolt"></i>
+                        <strong>Exemple pratique</strong>
                     </div>
-                    <p>Un système domestique Matter 1.4 coordonne automatiquement panneaux solaires, batterie de stockage et véhicule électrique. L'excédent solaire charge d'abord la batterie domestique, puis le véhicule, optimisant l'autoconsommation sans intervention manuelle.</p>
+                    <p><span class="source-text" data-source="matter14">Un système coordonne automatiquement panneaux solaires, batterie domestique et véhicule électrique. Matter 1.4 optimise la charge du véhicule selon production solaire et tarif électricité en temps réel, sans intervention manuelle.</span></p>
                 </div>
                 
-                <a href="https://csa-iot.org/newsroom/matter-1-4-enables-more-capable-smart-homes/" target="_blank" rel="noopener noreferrer" class="btn-article">
+                <a href="https://csa-iot.org/newsroom/matter-1-4-enables-more-capable-smart-homes/" target="_blank" rel="noopener noreferrer" class="btn-article" data-highlight="matter14">
                     <i class="fas fa-external-link-alt"></i> En savoir plus sur Matter 1.4 (CSA)
                 </a>
             </div>
@@ -316,17 +342,17 @@
                 </div>
                 <div class="actu-title-zone">
                     <h3>6G : Tests démontrent des performances révolutionnaires</h3>
-                    <span class="badge-cat">Protocole</span>
+                    <span class="badge-cat">Infrastructure</span>
                 </div>
             </div>
             
             <div class="actu-body">
                 <p class="actu-intro">
-                    Les premiers tests 6G en Chine, Japon et Corée du Sud démontrent des débits atteignant 1 Tbps en laboratoire. Ces performances, 100 fois supérieures à la 5G actuelle, ouvrent la voie à des applications impossibles aujourd'hui.
+                    <span class="source-text" data-source="6g">Des tests en Chine, Japon et Corée du Sud démontrent les capacités du 6G : débits de 1 Tbps (1000 fois plus rapide que la 4G), latence inférieure à 100 microsecondes et densité de 10 millions d'objets par km². La Chine a déployé plus de 10 stations de base 6G expérimentales.</span>
                 </p>
                 
                 <div class="info-block">
-                    <p>Les tests 6G utilisent des bandes de fréquences térahertz (100 GHz - 3 THz) permettant une bande passante massive. La Chine a déployé 10 stations de base 6G expérimentales, tandis que le Japon et la Corée du Sud conduisent des essais en partenariat avec les universités. La capacité théorique atteint 10 millions d'objets connectés par km², multipliant par 10 la densité de la 5G.</p>
+                    <p><span class="source-text" data-source="6g">Le 6G utilise des fréquences térahertz (100 GHz - 3 THz), permettant des débits massifs mais avec portée limitée. Cette contrainte nécessite un déploiement dense de petites cellules. La technologie intègre nativement l'IA pour optimiser la gestion du réseau : allocation dynamique des ressources, prédiction du trafic, détection automatique des pannes.</span></p>
                 </div>
                 
                 <div class="info-block exemple">
@@ -334,10 +360,10 @@
                         <i class="fas fa-city"></i>
                         <strong>Applications futures</strong>
                     </div>
-                    <p>Villes intelligentes avec capteurs temps réel (pollution, trafic, sécurité), véhicules autonomes coordonnant trajectoires instantanément avec latence sub-100 microsecondes, réseaux de santé surveillant millions de patients simultanément avec dispositifs médicaux connectés.</p>
+                    <p><span class="source-text" data-source="6g">Villes intelligentes avec capteurs temps réel (pollution, trafic, sécurité), véhicules autonomes coordonnant trajectoires instantanément avec latence sub-100 microsecondes, réseaux de santé surveillant millions de patients simultanément avec dispositifs médicaux connectés.</span></p>
                 </div>
                 
-                <a href="https://www.techtarget.com/searchnetworking/definition/6G" target="_blank" rel="noopener noreferrer" class="btn-article">
+                <a href="https://www.techtarget.com/searchnetworking/definition/6G" target="_blank" rel="noopener noreferrer" class="btn-article" data-highlight="6g">
                     <i class="fas fa-external-link-alt"></i> Comprendre la technologie 6G (TechTarget)
                 </a>
             </div>
@@ -361,7 +387,7 @@
                     <div class="source-content">
                         <h4>CSA-IoT</h4>
                         <p>Connectivity Standards Alliance</p>
-                        <span class="source-badge">Matter 1.3 & 1.4</span>
+                        <span class="source-badge">Matter 1.3</span>
                     </div>
                     <i class="fas fa-arrow-right source-arrow"></i>
                 </a>
@@ -473,6 +499,32 @@
 
     <script src="script.js"></script>
     <script>
+        // Système de surlignage des sources
+        document.querySelectorAll('.btn-article[data-highlight]').forEach(button => {
+            button.addEventListener('click', function(e) {
+                // Ne pas empêcher l'ouverture du lien externe
+                // mais ajouter le surlignage
+                const sourceId = this.getAttribute('data-highlight');
+                
+                // Retirer tous les anciens surlignages
+                document.querySelectorAll('.highlight-source').forEach(el => {
+                    el.classList.remove('highlight-source');
+                });
+                
+                // Ajouter le surlignage aux textes correspondants
+                document.querySelectorAll(`[data-source="${sourceId}"]`).forEach(textElement => {
+                    textElement.classList.add('highlight-source');
+                });
+                
+                // Retirer le surlignage après 10 secondes
+                setTimeout(() => {
+                    document.querySelectorAll('.highlight-source').forEach(el => {
+                        el.classList.remove('highlight-source');
+                    });
+                }, 10000);
+            });
+        });
+
         // Smooth scroll pour les liens vers les actualités
         document.querySelectorAll('a[href^="#actualite-"]').forEach(link => {
             link.addEventListener('click', function(e) {
