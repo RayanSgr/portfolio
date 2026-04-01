@@ -526,3 +526,139 @@ footer p {
         color: #2563eb;
     }
 }
+
+/* Section Sources */
+.sources-section {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.sources-section .section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.sources-section .section-header h2 {
+    font-size: 2.5rem;
+    color: #1f2937;
+    margin-bottom: 0.5rem;
+}
+
+.sources-section .section-header p {
+    color: #6b7280;
+    font-size: 1.1rem;
+}
+
+.sources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+}
+
+.source-card {
+    background: white;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+.source-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+}
+
+.source-card:hover::before {
+    transform: scaleY(1);
+}
+
+.source-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+}
+
+.source-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.source-icon i {
+    font-size: 1.8rem;
+    color: white;
+}
+
+.source-content {
+    flex: 1;
+}
+
+.source-content h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.25rem;
+    color: #1f2937;
+}
+
+.source-content p {
+    font-size: 0.9rem;
+    color: #6b7280;
+    margin-bottom: 0.5rem;
+}
+
+.source-badge {
+    display: inline-block;
+    background: #f3f4f6;
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.85rem;
+    color: #4b5563;
+}
+
+.source-arrow {
+    font-size: 1.2rem;
+    color: #9ca3af;
+    transition: all 0.3s ease;
+}
+
+.source-card:hover .source-arrow {
+    color: #667eea;
+    transform: translateX(5px);
+}
+
+/* Animation pour les actualités */
+.actualite {
+    transition: all 0.3s ease;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .sources-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .source-card {
+        padding: 1.25rem;
+    }
+    
+    .source-icon {
+        width: 50px;
+        height: 50px;
+    }
+}

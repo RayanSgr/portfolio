@@ -122,7 +122,7 @@
         </div>
 
         <!-- Actualité 1 -->
-        <article class="actualite">
+        <article class="actualite" id="actualite-matter-1-3">
             <div class="actu-numero">#1</div>
             <div class="actu-header">
                 <div class="actu-date-card">
@@ -159,7 +159,7 @@
         </article>
 
         <!-- Actualité 2 -->
-        <article class="actualite">
+        <article class="actualite" id="actualite-cameras">
             <div class="actu-numero">#2</div>
             <div class="actu-header">
                 <div class="actu-date-card">
@@ -196,7 +196,7 @@
         </article>
 
         <!-- Actualité 3 -->
-        <article class="actualite">
+        <article class="actualite" id="actualite-cyber-resilience-act">
             <div class="actu-numero">#3</div>
             <div class="actu-header">
                 <div class="actu-date-card">
@@ -233,7 +233,7 @@
         </article>
 
         <!-- Actualité 4 -->
-        <article class="actualite">
+        <article class="actualite" id="actualite-samsung-exynos">
             <div class="actu-numero">#4</div>
             <div class="actu-header">
                 <div class="actu-date-card">
@@ -270,7 +270,7 @@
         </article>
 
         <!-- Actualité 5 -->
-        <article class="actualite">
+        <article class="actualite" id="actualite-matter-1-4">
             <div class="actu-numero">#5</div>
             <div class="actu-header">
                 <div class="actu-date-card">
@@ -307,7 +307,7 @@
         </article>
 
         <!-- Actualité 6 -->
-        <article class="actualite">
+        <article class="actualite" id="actualite-6g">
             <div class="actu-numero">#6</div>
             <div class="actu-header">
                 <div class="actu-date-card">
@@ -344,6 +344,90 @@
         </article>
 
     </main>
+
+    <!-- Sources officielles -->
+    <section class="sources-section">
+        <div class="container">
+            <div class="section-header">
+                <h2><i class="fas fa-link"></i> Sources Officielles</h2>
+                <p>Cliquez sur une source pour accéder à l'actualité correspondante</p>
+            </div>
+
+            <div class="sources-grid">
+                <a href="#actualite-matter-1-3" class="source-card">
+                    <div class="source-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <div class="source-content">
+                        <h4>CSA-IoT</h4>
+                        <p>Connectivity Standards Alliance</p>
+                        <span class="source-badge">Matter 1.3 & 1.4</span>
+                    </div>
+                    <i class="fas fa-arrow-right source-arrow"></i>
+                </a>
+
+                <a href="#actualite-cameras" class="source-card">
+                    <div class="source-icon" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="source-content">
+                        <h4>Bitsight</h4>
+                        <p>Cybersecurity Analytics</p>
+                        <span class="source-badge">Sécurité IoT</span>
+                    </div>
+                    <i class="fas fa-arrow-right source-arrow"></i>
+                </a>
+
+                <a href="#actualite-cyber-resilience-act" class="source-card">
+                    <div class="source-icon" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <div class="source-content">
+                        <h4>Commission Européenne</h4>
+                        <p>Union Européenne</p>
+                        <span class="source-badge">Cyber Resilience Act</span>
+                    </div>
+                    <i class="fas fa-arrow-right source-arrow"></i>
+                </a>
+
+                <a href="#actualite-samsung-exynos" class="source-card">
+                    <div class="source-icon" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <div class="source-content">
+                        <h4>Samsung Semiconductor</h4>
+                        <p>Fabricant de puces</p>
+                        <span class="source-badge">Exynos W1000</span>
+                    </div>
+                    <i class="fas fa-arrow-right source-arrow"></i>
+                </a>
+
+                <a href="#actualite-matter-1-4" class="source-card">
+                    <div class="source-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <div class="source-content">
+                        <h4>CSA-IoT</h4>
+                        <p>Connectivity Standards Alliance</p>
+                        <span class="source-badge">Matter 1.4</span>
+                    </div>
+                    <i class="fas fa-arrow-right source-arrow"></i>
+                </a>
+
+                <a href="#actualite-6g" class="source-card">
+                    <div class="source-icon" style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);">
+                        <i class="fas fa-broadcast-tower"></i>
+                    </div>
+                    <div class="source-content">
+                        <h4>TechTarget</h4>
+                        <p>IT Media Company</p>
+                        <span class="source-badge">Technologie 6G</span>
+                    </div>
+                    <i class="fas fa-arrow-right source-arrow"></i>
+                </a>
+            </div>
+        </div>
+    </section>
 
     <!-- Conclusion -->
     <section class="conclusion">
@@ -388,5 +472,32 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        // Smooth scroll pour les liens vers les actualités
+        document.querySelectorAll('a[href^="#actualite-"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                
+                if (targetElement) {
+                    // Scroll avec animation fluide
+                    targetElement.scrollIntoView({ 
+                        behavior: 'smooth', 
+                        block: 'center' 
+                    });
+                    
+                    // Ajouter un effet visuel temporaire
+                    targetElement.style.transform = 'scale(1.02)';
+                    targetElement.style.boxShadow = '0 10px 40px rgba(102, 126, 234, 0.3)';
+                    
+                    setTimeout(() => {
+                        targetElement.style.transform = '';
+                        targetElement.style.boxShadow = '';
+                    }, 1000);
+                }
+            });
+        });
+    </script>
 </body>
 </html>
